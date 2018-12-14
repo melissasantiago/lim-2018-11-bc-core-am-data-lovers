@@ -27,7 +27,7 @@ const mexico = totaldata[1];
 
 //console.log(peru[1].indicators);
 const newPer = peru[1].indicators;
-console.log(newPer[11]);
+console.log(newPer[111 ]);
 
 //console.log(mexico[1].dataSource);
 
