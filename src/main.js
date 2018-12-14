@@ -1,12 +1,21 @@
 //console.table(WORLDBANK.per);
 
 //paa convertir a ARRAY en la consola
-const newWorld = (Object.keys(WORLDBANK.PER.indicators[0]));
+const newWorld = (Object.values(WORLDBANK.PER.indicators[0]));
+//console.log(newWorld);// aparece en consola
 
-//const newWorld2 = newWorld.
+//convertir en array la data
+//const array2 = Object.values(newWorld);
+const probando = Object.values(newWorld[0]);
+
+console.log(probando)
+
+
+
+//const newWorld2 = Object.entries(newWorld)  ;
   //for(let i = 0; i< newWorld.length; i++){
 //const filPer = newWorld.filter(newWorld => newWorld.length >0)
-  console.log(newWorld);// aparece en consola
+
 //}
 //para hacer una copia
 
