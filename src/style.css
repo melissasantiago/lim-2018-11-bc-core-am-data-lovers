@@ -1,0 +1,162 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  padding bottom: 400px;
+}
+
+#logotype {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 250px;
+  };
+
+#logotype {
+  margin: 10 20px;
+}
+
+
+.container .field-input {
+    width:50%;
+    margin-left: 1%;
+    margin-bottom: 50px;
+    margin-right: 20px;
+  }
+
+input{
+  width: 50%;
+  height: 25px;
+box-sizing: border-box;
+border-radius: 4px;
+}
+
+#welcome {
+  display : block;
+}
+.menu-1 {
+  /*outline: 1px solid yellow;*/
+  width: 100%;
+  height: auto;
+
+}
+
+.menu-2 {
+  /*outline: 1px solid blue;*/
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #009FDA;
+  line-height: 40px;
+  text-align: center;
+}
+
+.country {
+  /*outline: 1px solid red;*/
+  width: 150px;
+  display: inline-block;
+  text-align: center;
+}
+
+.country-links {
+  /*outline: 1px solid green;*/
+  text-decoration: none;
+  display: block;
+  color:#fff;
+}
+
+.country-links:hover{
+  background: #002244;
+
+}
+
+#indicators {
+  padding: 1em 2em;
+}
+
+.ind-title{
+  padding-bottom: 20px;
+}
+.filter-by-year {
+padding: 10px 15px;
+}
+
+
+.themes-1 {
+  width: 20%;
+  height: auto;
+  padding-top: 30px;
+  padding-right: 15%;
+  padding-left: 75%;
+  padding-bottom: 20%;
+}
+
+.themes-2 {
+  /*outline: 1px solid #002244;*/
+  list-style: none;
+  padding: 0;
+  margin right: 10px;
+  background: #fff;
+  line-height: 40px;
+  text-align: left;
+}
+
+.sub-theme {
+/*outline: 1px solid #002244;*/
+width: 230px;
+padding-left: 30px;
+
+}
+
+.themes-links{
+  text-decoration: none;
+  display: block;
+  color: #002244;
+}
+
+.themes-links:hover {
+  color: #009FDA
+}
+
+#initial-page {
+  /*font-family: ;*/
+  text-align: left;
+  width: 100%;
+  padding-top: 20px;
+  margin top: 20px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  background-image: image("imagenes/worldmap.png");
+}
+
+/*#worldmap {
+  margin-top: 0px;
+  margin-bottom: 80px;
+ width: 100%;
+
+}*/
+
+  /*
+    .field-input {
+      text-align: center;
+      input {
+        text-align: left;
+        border-radius: 6rem;
+        border: 1px solid rgb(160, 160, 160);
+        padding: .6rem 2rem .6rem 1rem;
+        width: 12rem;
+        font-family: 'roboto';
+        transition: .5s;
+        &:focus {
+          outline: none;
+          border-color: #212121;
+          transition: .5s;
+}*/
