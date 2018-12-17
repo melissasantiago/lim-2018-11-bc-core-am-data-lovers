@@ -1,3 +1,16 @@
+const inicioPantalla = () => {
+  document.getElementById("indicators").style.display = "none";
+  document.getElementById("root").style.display = "block";
+}
+inicioPantalla();
+
+const countryData = document.getElementById("welcome")
+const dataResult = () => {
+  document.getElementById("root").style.display = "block";
+  document.getElementById("indicators").style.display = "block";
+}
+countryData.addEventListener("click", dataResult);
+ 
 //Convertir a Array
 //console.log(Object.entries(WORLDBANK))
 const allTheData = Object.entries(WORLDBANK);
@@ -51,3 +64,7 @@ newArr.push({name : "URU"})
 
 console.log(newArr)
 console.log(WORLDBANK)*/
+
+
+
+//DOM para visualizar paginas
