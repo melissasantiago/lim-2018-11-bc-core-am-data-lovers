@@ -8,31 +8,14 @@ const countryData = document.getElementById("welcome")
 const dataResult = () => {
   document.getElementById("root").style.display = "block";
   document.getElementById("indicators").style.display = "block";
+  document.getElementById("initial-page").style.display = "none";
 }
 countryData.addEventListener("click", dataResult);
- 
-//Convertir a Array
-//console.log(Object.entries(WORLDBANK))
-const allTheData = Object.entries(WORLDBANK);
-console.log(allTheData)
-/*const data = WORLDBANK.value;
-const newDataBank = []*/
 
-//Clona toda la data para solo usar dataClone
-const dataClone = (dataBank) => {
-  const newDataBank = [];
-  for (let i = 0; i < dataBank.length; i++){
-    //newDataBank.push(dataBank[i])
-    console.log(dataBank[i])
-    newDataBank.push(Object.assign({},dataBank[i]))
-  }
-  return newDataBank;
-}
 
-//Esto funciona solo con la funcion de arriba
-//dataClone(allTheData);
+// todo en datajs
 
-const newDataClone = dataClone(allTheData);
+/*******const newDataClone = dataClone(allTheData);
 
 const totaldata = Object.values(newDataClone);
 const peru = totaldata[0];
@@ -40,7 +23,7 @@ const mexico = totaldata[1];
 
 //console.log(peru[1].indicators);
 const newPer = peru[1].indicators;
-console.log(newPer[111 ]);
+console.log(newPer[111 ]);*********/
 
 //console.log(mexico[1].dataSource);
 

@@ -12,7 +12,7 @@
       <div id="header">
       <div class="container">
         <!--<form id="logotype">-->
-          <img src="imagenes/datbank.png" alt="logo de Data World Bank">
+          <img id="logotype" src="imagenes/datbank.png" alt="logo de Data World Bank">
            <input class="field-input" type='text' placeholder='Search...'>
            <i class='bx bx-search' aria-hidden="true"></i>
      </div>
@@ -28,14 +28,18 @@
         </ul>
       </nav>
     </section>
-    <section id="initial-page"> <h4>Banco de datos: Región Latinoamérica</h4>
-      <p>Estadísticas del mundo real para la comunidad del desarrollo</p>
-    </section>
+    <div id="initial-page"> <h4>Banco de datos: Región Latinoamérica</h4>
+      <p>Estadísticas del mundo real para la comunidad del desarrollo <img id="worldmap" src="imagenes/worldmap.png" alt="logo de Data World Bank"></p>
+
+    </div>
   </div>
   <div id="indicators">
     <form class="indicator-tittle">
           <h3 class="ind-title"> Indicadores</h3>
           <label class="filter-by-year"> Por año: <input type="number" min="1960" max="2017" step="1" value="2016"></label>
+    </form>
+    <form>
+      <p id="list"></p>
     </form>
       <section id="themes">
           <nav class="themes-1">

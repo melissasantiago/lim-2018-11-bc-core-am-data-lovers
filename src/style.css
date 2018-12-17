@@ -13,7 +13,7 @@ body {
   padding bottom: 400px;
 }
 
-img {
+#logotype {
     padding-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -130,13 +130,19 @@ padding-left: 30px;
   /*font-family: ;*/
   text-align: left;
   width: 100%;
-  height: 100%;
-  background-image: url(imagenes/worldmap.png);
-  background-size: cover;
   padding-top: 20px;
   margin top: 20px;
   margin-left: 50px;
+  margin-bottom: 20px;
+  background-image: image("imagenes/worldmap.png");
 }
+
+/*#worldmap {
+  margin-top: 0px;
+  margin-bottom: 80px;
+ width: 100%;
+
+}*/
 
   /*
     .field-input {
