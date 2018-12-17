@@ -4,21 +4,71 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@1.8.1/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
-    <header>
+  <div id="root">
+        <header>
       <div id="header">
-        <img src="imagenes/datbank.png" alt="logo de Data World Bank">
-     <form class="container">
-        <p>
-<input class="field-input" type='text' placeholder='Search...'></input>
-        </p>
-    </form>
-      </div>
+      <div class="container">
+        <!--<form id="logotype">-->
+          <img id="logotype" src="imagenes/datbank.png" alt="logo de Data World Bank">
+           <input class="field-input" type='text' placeholder='Search...'>
+           <i class='bx bx-search' aria-hidden="true"></i>
+     </div>
+   </div>
     </header>
+    <section id="welcome">
+        <nav class="menu-1">
+        <ul class="menu-2">
+          <li class="country"><a class="country-links">Perú</a></li>
+          <li class="country"><a class="country-links">Mexico</a></li>
+          <li class="country"><a class="country-links">Chile</a></li>
+          <li class="country"><a class="country-links">Brasil</a></li>
+        </ul>
+      </nav>
+    </section>
+    <div id="initial-page"> <h4>Banco de datos: Región Latinoamérica</h4>
+      <p>Estadísticas del mundo real para la comunidad del desarrollo <img id="worldmap" src="imagenes/worldmap.png" alt="logo de Data World Bank"></p>
 
-    <div id="root"></div>
-    <h1> hola </h1>
+    </div>
+  </div>
+  <div id="indicators">
+    <form class="indicator-tittle">
+          <h3 class="ind-title"> Indicadores</h3>
+          <label class="filter-by-year"> Por año: <input type="number" min="1960" max="2017" step="1" value="2016"></label>
+    </form>
+    <form>
+      <p id="list"></p>
+    </form>
+      <section id="themes">
+          <nav class="themes-1">
+            <label class="themes-tittle">Temas</label>
+          <ul class="themes-2">
+            <li class="sub-theme"><a class="themes-links">Agricultura y desarrollo rural</a></li>
+            <li class="sub-theme"><a class="themes-links">Cambio climático</a></li>
+            <li class="sub-theme"><a class="themes-links">Ciencia y tecnología</a></li>
+            <li class="sub-theme"><a class="themes-links">Comercio</a></li>
+            <li class="sub-theme"><a class="themes-links">Desarrollo social</a></li>
+            <li class="sub-theme"><a class="themes-links">Desarrollo urbano</a></li>
+            <li class="sub-theme"><a class="themes-links">Deuda externa</a></li>
+            <li class="sub-theme"><a class="themes-links">Economía y crecimiento</a></li>
+            <li class="sub-theme"><a class="themes-links">Edcuación</a></li>
+            <li class="sub-theme"><a class="themes-links">Eficacia de la aydua</a></li>
+            <li class="sub-theme"><a class="themes-links">Género</a></li>
+            <li class="sub-theme"><a class="themes-links">Infraestructura</a></li>
+            <li class="sub-theme"><a class="themes-links">Medio ambiente</a></li>
+            <li class="sub-theme"><a class="themes-links">Pobreza</a></li>
+            <li class="sub-theme"><a class="themes-links">Protección social y de trabajo</a></li>
+            <li class="sub-theme"><a class="themes-links">Salud</a></li>
+            <li class="sub-theme"><a class="themes-links">Sector financiero</a></li>
+            <li class="sub-theme"><a class="themes-links">Sector Privado</a></li>
+            <li class="sub-theme"><a class="themes-links">Sector público</a></li>
+          </ul>
+        </nav>
+      </section>
+  </div>
+
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <!-- <script src="./data/pokemon/pokemon.js"></script> -->
     <!-- <script src="./data/steam/steam.js"></script> -->
