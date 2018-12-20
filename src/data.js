@@ -37,7 +37,16 @@ const getDataPeru = (arrayDePaises) => {
 
 const arrayDeIndicadoresDePeru = getDataPeru(data);
 
-console.log(arrayDeIndicadoresDePeru)
+//console.log(arrayDeIndicadoresDePeru)
+
+const getPeruInd = (indicadoresDePeru) => {
+  const indName = indicadoresDePeru['1'].indicators; // un objeto con 2 propiedades que tiene la data de peru
+  return indName['4'].indicatorName;
+}
+
+const arrayDeIndicadoresNameDePeru = getPeruInd(arrayDeIndicadoresDePeru);
+
+console.log(arrayDeIndicadoresNameDePeru)
 // Esto funciona solo con la funcion de arriba
 // dataClone(allTheData);
 
