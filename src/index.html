@@ -6,7 +6,9 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link href='https://cdn.jsdelivr.net/npm/boxicons@1.8.1/css/boxicons.min.css' rel='stylesheet'>
-  </head>
+    <link href="http://allfont.es/allfont.css?fonts=andes-bold" rel="stylesheet" type="text/css" />
+
+
   <body>
   <div id="root">
         <header>
@@ -29,10 +31,16 @@
         </ul>
       </nav>
     </section>
-    <div id="initial-page"> <h4>Banco de datos: Región Latinoamérica</h4>
-      <p>Estadísticas del mundo real para la comunidad del desarrollo <img id="worldmap" src="imagenes/worldmap.png" alt="logo de Data World Bank"></p>
+    <div id="initial-page" class="initial">
+    <section class="text-0"> <h4>Banco de datos: Región Latinoamérica</h4>
+      <p>Estadísticas del mundo real para la comunidad del desarrollo </p>
+          <img class="worldmap" src="imagenes/worldmap.png" alt="logo de Data World Bank">
+    </section>
 
-    </div>
+    <aside class="text-1">
+      <label> Gracias al fuerte liderazgo nacional y las reformas ambiciosas, la mayoría de las partes del mundo han experimentado una expansión en el acceso a los servicios de salud y acciones para garantizar la asequibilidad. Sin embargo, a pesar de esto, la mitad de la población mundial todavía no puede acceder a los servicios de salud necesarios y 100 millones de personas son empujadas a la pobreza extrema cada año debido a los gastos de salud, según una investigación reciente del Grupo del Banco Mundial y la Organización Mundial de la Salud (OMS).</label>
+    </aside>
+  </div>
   </div>
   <div id="indicators">
     <form class="indicator-tittle">
@@ -71,8 +79,12 @@
         </nav>
       </section>
   </div>
+  <div class="footer">
+<footer class="pie-pagina"></footer>
+  </div>
       <script src="./data/worldbank/worldbank.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
+    </head>
 </html>
