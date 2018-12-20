@@ -22,7 +22,7 @@ const goPeru = () => {
 
 
   let listaHTML = document.getElementById("list");//esto iria en el main.js
-  let listaNombreIndicadoresBrasil=getNombresIndicadores(data,"PER");
+  let listaNombreIndicadoresPeru=getNombresIndicadores(data,"PER");
 
   // limpiar la lista en html
   listaHTML.innerHTML="";
@@ -36,6 +36,6 @@ const goPeru = () => {
     nodoEntradaLista.appendChild(nodoIndicador);// inserto el texto(nombre del indicador) en la entrada de la lista
     listaHTML.appendChild(nodoEntradaLista);// inserto la entrada de la lista ahora con el texto en el documento HTML
  }
-listaNombreIndicadoresBrasil.map(imprimirIndicador);
+listaNombreIndicadoresPeru.map(imprimirIndicador);
 };
 botonPeru.addEventListener("click",goPeru);
