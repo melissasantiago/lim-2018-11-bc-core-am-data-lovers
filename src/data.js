@@ -28,3 +28,32 @@ const data = dataClone(allTheData) // data es una array con 4 objetos (cada obje
 // }
 // return newInd;
 // }
+
+
+const getDataPeru = (arrayDePaises) => {
+  const dataDePeru = arrayDePaises[0]; // un objeto con 2 propiedades que tiene la data de peru
+  return dataDePeru['1'].indicators;
+}
+
+const arrayDeIndicadoresDePeru = getDataPeru(data);
+
+//console.log(arrayDeIndicadoresDePeru)
+
+const getPeruInd = (indicadoresDePeru) => {
+  const indName = indicadoresDePeru['1'].indicators; // un objeto con 2 propiedades que tiene la data de peru
+  return indName['4'].indicatorName;
+}
+
+const arrayDeIndicadoresNameDePeru = getPeruInd(arrayDeIndicadoresDePeru);
+
+console.log(arrayDeIndicadoresNameDePeru)
+// Esto funciona solo con la funcion de arriba
+// dataClone(allTheData);
+
+// const example = () => {
+// return 'example';
+// };
+
+window.data = {
+
+};
