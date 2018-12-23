@@ -1,25 +1,22 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-const example = () => {
+/* const example = () => {
   return 'example';
 };
 
 window.example = example;
+*/
 
-// Convertir a Array
-// console.log(Object.entries(WORLDBANK))
-const allTheData = Object.entries(WORLDBANK);
+const allTheData = Object.entries(WORLDBANK); // con Object.entries convertimos en array y lo declaramos en la variable allTheData
 // console.log(allTheData);
 /* const data = WORLDBANK.value;
 const newDataBank = []*/
-
-// Clona toda la data para solo usar dataClone
-const dataClone = (dataBank) => {
+const dataClone = (dataBank) => { // Clona toda la data para solo usar dataClone
   const newDataBank = [];
-  for (let i = 0; i < dataBank.length; i++){
-  newDataBank.push(Object.assign( {} , dataBank[i] ));
-}
+  for (let i = 0; i < dataBank.length; i++) {
+    newDataBank.push(Object.assign({}, dataBank[i]));
+  }
   return newDataBank;
 };
 
@@ -27,21 +24,32 @@ const data = dataClone(allTheData); // data es una array con 4 objetos (cada obj
 
 const getDataPeru = (arrayDePaises) => {
   const dataDePeru = arrayDePaises[0]; // un objeto con 2 propiedades que tiene la data de peru
-  return dataDePeru['1'].indicators;
-  // console.log(getDataPeru);
+  return dataDePeru['1'].indicators; // console.log(getDataPeru);
+};
+const getDataMexico = (arrayDePaises) => {
+  const dataDeMexico = arrayDePaises[1];
+  return dataDeMexico['1'].indicators;
+};
+const getDataBrasil = (arrayDePaises) => {
+  const dataDeBrasil = arrayDePaises[2];
+  return dataDeBrasil['1'].indicators;
 };
 
+const getDataChile = (arrayDePaises) => {
+  const dataDeChile = arrayDePaises[3];
+  return dataDeChile['1'].indicators;
+};
 
-const arrayDeIndicadoresDePeru = getDataPeru(data);
+const arrayDeIndicadoresDePeru = getDataPeru(data); // console.log(arrayDeIndicadoresDePeru);//
+const arrayDeIndicadoresDeMexico = getDataMexico(data);
+const arrayDeIndicadoresDeBrasil = getDataBrasil(data);
+const arrayDeIndicadoresDeChile = getDataChile(data);
 
-console.log(arrayDeIndicadoresDePeru);
-
-const comparaIndicadores = (indicat1 , indicat2) => {
-  // extraer los nombres
+const comparaIndicadores = (indicat1, indicat2) => {
+  // extraer los nombres ponemos variables para no poner en las condiciones indicatorName a cada rato
   let nombreInd1 = indicat1.indicatorName;
   let nombreInd2 = indicat2.indicatorName;
-
-  // condiciones para ordenar alfabeticamente
+  // condiciones para ordenar alfabeticamente ver MDN
   if (nombreInd1 < nombreInd2)
     return -1;
   if (nombreInd1 > nombreInd2)
@@ -51,12 +59,6 @@ const comparaIndicadores = (indicat1 , indicat2) => {
 };
 
 arrayDeIndicadoresDePeru.sort(comparaIndicadores);
-
-let listaHTML = document.getElementById('list');// esto iria en el main.js
-for (let a = 0; a < arrayDeIndicadoresDePeru.length;a++) {
-  let indicador = arrayDeIndicadoresDePeru[a].indicatorName;// obtengo el nombre del indicador
-  let nodoIndicador = document.createTextNode(indicador);// creo el texto HTML con el nombre del indicador
-  let nodoEntradaLista = document.createElement('li');// creo la entrada de lista sin texto
-  nodoEntradaLista.appendChild(nodoIndicador);// inserto el texto(nombre del indicador) en la entrada de la lista
-  listaHTML.appendChild(nodoEntradaLista);// inserto la entrada de la lista ahora con el texto en el documento HTML
-}
+// arrayDeIndicadoresDeMexico.sort(comparaIndicadores);//
+arrayDeIndicadoresDeBrasil.sort(comparaIndicadores);
+// arrayDeIndicadoresDeChile.sort(comparaIndicadores);//
