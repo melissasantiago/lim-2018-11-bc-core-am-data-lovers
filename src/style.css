@@ -15,12 +15,8 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     width: 250px;
-  };
-
-#logotype {
-  margin: 10 20px;
-}
-
+    margin: 10 20px;
+  }
 
 .container .field-input {
     width:50%;
@@ -89,10 +85,7 @@ padding: 10px 15px;
 .themes-1 {
   width: 20%;
   height: auto;
-  padding-top: 30px;
-  padding-right: 15%;
-  padding-left: 75%;
-  padding-bottom: 20%;
+  padding-left: 55%;
 }
 
 .themes-2 {
@@ -122,7 +115,7 @@ padding-left: 30px;
   color: #009FDA
 }
 
- .text-0, .text-1, .pie-pagina {
+ .text-0, .text-1, .ind-text-1,.ind-text-2, .pie-pagina {
   /*font-family: ;*/
  padding: 3em 1em;
 /*  margin top: 20px;
@@ -131,7 +124,8 @@ padding-left: 30px;
   width: 100%;*/
   /*background-image: image("imagenes/worldmap.png");*/
 }
-.text-1, .text-0, .pie-pagina {
+
+.text-1, .text-0,.ind-text-1,.ind-text-2, .pie-pagina {
   float: left;
   box-sizing: border-box;
 }
@@ -148,6 +142,36 @@ text-shadow: 1px 1px 1px #aaa;
 
   padding-top: 15em;
   width: 40%;
+  height: 250px;
+}
+
+.ind-option-1 {
+  list-style: none;
+  padding: 0px;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #0071BC;
+}
+.ind-option-2 {
+  list-style: none;
+  display: inline-block;
+  border-right: 1px solid #d4d4d4;
+}
+.ind-option-3{
+    list-style: none;
+      display: inline-block;
+}
+
+.ind-text-1 {
+  width: 60%;
+  font-family: 'Andes Bold', arial;
+  }
+
+.ind-text-2{
+  padding-top: 10em;
+  width: 30%;
   height: 250px;
 }
 

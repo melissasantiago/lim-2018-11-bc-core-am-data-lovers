@@ -1,6 +1,6 @@
 const inicioPantalla = () => {
+  document.getElementById('initial-page').style.display = 'block';
   document.getElementById('indicators').style.display = 'none';
-  document.getElementById('root').style.display = 'block';
 };
 inicioPantalla();
 
