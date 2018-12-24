@@ -1,6 +1,6 @@
 const inicioPantalla = () => {
+  document.getElementById('initial-page').style.display = 'block';
   document.getElementById('indicators').style.display = 'none';
-  document.getElementById('root').style.display = 'block';
 };
 inicioPantalla();
 /*
@@ -13,35 +13,9 @@ const dataResult = () => {
 countryData.addEventListener("click", dataResult);
 */
 
-let botonPeru = document.getElementById('btn-per');
-
-const goPeru = () => {
-  document.getElementById('root').style.display = 'block';
-  document.getElementById('indicators').style.display = 'block';
-  document.getElementById('initial-page').style.display = 'none';
-
-
-  let listaHTML = document.getElementById('list');// esto iria en el main.js
-  let listaNombreIndicadoresPeru = getNombresIndicadores(data, 'PER');
-
-  // limpiar la lista en html
-  listaHTML.innerHTML = '';
-
-  function imprimirIndicador(indicador) => {
-
-
-    let nombreIndicador = indicador;// obtengo el nombre del indicador
-    let nodoIndicador = document.createTextNode(nombreIndicador);// creo el texto HTML con el nombre del indicador
-    let nodoEntradaLista = document.createElement('li');// creo la entrada de lista sin texto
-    nodoEntradaLista.appendChild(nodoIndicador);// inserto el texto(nombre del indicador) en la entrada de la lista
-    listaHTML.appendChild(nodoEntradaLista);// inserto la entrada de la lista ahora con el texto en el documento HTML
- }
-  listaNombreIndicadoresPeru.map(imprimirIndicador);
-};
+  const botonPeru = document.getElementById('btn-per');
+  const goPeru = () => {
+    document.getElementById('initial-page').style.display = 'none';
+    document.getElementById('indicators').style.display = 'block';
+}
 botonPeru.addEventListener('click', goPeru);
-
-/* const listdataPeru = document.getElementById('')//la data que va a imprimir
-let inputYearPeru =document.getElementById('year')//de qué año
-const  dataOftheYearPeru = document.getElementById('list')//lugar dónde lo va a imprimir
-const buttonSendYear = document.getElementById('summit')//boton que envia información
-*/
