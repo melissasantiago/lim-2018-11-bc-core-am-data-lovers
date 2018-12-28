@@ -59,6 +59,6 @@ const comparaIndicadores = (indicat1, indicat2) => {
 };
 
 arrayDeIndicadoresDePeru.sort(comparaIndicadores);
-// arrayDeIndicadoresDeMexico.sort(comparaIndicadores);//
+arrayDeIndicadoresDeMexico.sort(comparaIndicadores);//
 arrayDeIndicadoresDeBrasil.sort(comparaIndicadores);
-// arrayDeIndicadoresDeChile.sort(comparaIndicadores);//
+arrayDeIndicadoresDeChile.sort(comparaIndicadores);//
