@@ -122,7 +122,7 @@ const goMexico = () => {
   };
   botonFiltroEducacion.addEventListener('click', filtrarEducacionMexico);
 };
-botonMexico.addEventListener('click', goMexico);
+botonMexico.addEventListener('click', goMexico); 
 
 // -----------------------------------BRASIL---------------------------------//
 
