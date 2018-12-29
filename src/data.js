@@ -62,3 +62,17 @@ arrayDeIndicadoresDePeru.sort(comparaIndicadores);
 arrayDeIndicadoresDeMexico.sort(comparaIndicadores);//
 arrayDeIndicadoresDeBrasil.sort(comparaIndicadores);
 arrayDeIndicadoresDeChile.sort(comparaIndicadores);//
+
+// -------------------------------------------------------------------------//
+
+const one = WORLDBANK.PER.indicators;
+for (let i = 0; i < one.length; i++) {
+  const two = one[i].data[document.getElementById('year').value];
+  const three = one[i].indicatorName;
+  document.getElementById('out').innerHTML += `
+  <tr>
+    <td>${three}</td>
+    <td>${two}</td>
+  </tr>
+`;
+}

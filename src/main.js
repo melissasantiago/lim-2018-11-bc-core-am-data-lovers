@@ -9,8 +9,8 @@ const limpiarListaIndicadores = (listaHTML) => {
 };
 
 const imprimirIndicadores = (arregloIndicadores, listaHTML) => {
-  for (let a = 0; a < arregloIndicadores.length;a++) {
-    let indicador = arregloIndicadores[a].indicatorName;// obtengo el nombre del indicador
+  for (let i = 0; i < arregloIndicadores.length; i++) {
+    let indicador = arregloIndicadores[i].indicatorName;// obtengo el nombre del indicador
     imprimirIndicador(indicador, listaHTML);
   }
 };
@@ -18,18 +18,15 @@ const imprimirIndicadores = (arregloIndicadores, listaHTML) => {
 const funcFiltroPob = (elemento) => {
   // debe retornar un valor verdadero o falso (booleano)
   let codigoIndicador = elemento.indicatorCode;
-  let iniciales = codigoIndicador.slice(0, 6);
-  return iniciales === 'SP.POP';
+  let inicialesPob = codigoIndicador.slice(0, 6);
+  return inicialesPob === 'SP.POP';
 };
 
-const filtradoEduc = (elemento1) => {
+/* const funfiltroEduc = (elemento1) => {
   let codigo = elemento1.indicatorCode;
-  if (codigo.slice(0, 3) === 'SE.') {
-    return true;
-  } else {
-    return false;
-  }
-};
+  if (codigo.slice(0, 3) === 'SE.') {*/
+
+/* };*/
 
 // -----------------------------------PERU---------------------------------//
 // OBTENER EL BOTON DE ARRIBA
@@ -53,10 +50,10 @@ const goPeru = () => {
 
   // OBTENEMOS BOTONES LATERALES DERECHOS
   let botonFiltroPoblacion = document.getElementById('filter-pob');
-  let botonFiltroViolencia = document.getElementById('filter-vio');
+  /* let botonFiltroViolencia = document.getElementById('filter-vio');
   let botonFiltroEducacion = document.getElementById('filter-edu');
   let botonFiltroProteccion = document.getElementById('filter-prot');
-  let botonFiltroFinanzas = document.getElementById('filter-fin');
+  let botonFiltroFinanzas = document.getElementById('filter-fin');*/
 
   // FUNCION DE FILTRADO
   const filtrarPoblacionPeru = () => {
@@ -71,10 +68,10 @@ const goPeru = () => {
   // CUANDO SE HAGA CLICK EN EL BOTON "POBLACION", SE LLAMARA A LA FUNCION YA DEFINIDA ARRIBA filtrarPoblacionPeru
   botonFiltroPoblacion.addEventListener('click', filtrarPoblacionPeru);
 
-  botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
+  /* botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
   botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
   botonFiltroProteccion.addEventListener('click', filtrarProteccionPeru);
-  botonFiltroFinanzas.addEventListener('click', filtrarFinanzasPeru);
+  botonFiltroFinanzas.addEventListener('click', filtrarFinanzasPeru);*/
 };
 
 // CUANDO SE HAGA CLICK EN EL BOTON DE PERU SE REALIZARA LO QUE ES GOPERU
@@ -97,10 +94,10 @@ const goMexico = () => {
 
 
   let botonFiltroPoblacion = document.getElementById('filter-pob');
-  let botonFiltroViolencia = document.getElementById('filter-vio');
+  /* let botonFiltroViolencia = document.getElementById('filter-vio');
   let botonFiltroEducacion = document.getElementById('filter-edu');
   let botonFiltroProteccion = document.getElementById('filter-prot');
-  let botonFiltroFinanzas = document.getElementById('filter-fin');
+  let botonFiltroFinanzas = document.getElementById('filter-fin');*/
 
 
   const filtrarPoblacionMexico = () => {
@@ -113,14 +110,14 @@ const goMexico = () => {
 
   botonFiltroPoblacion.addEventListener('click', filtrarPoblacionMexico);
 
-  const filtrarEducacionMexico = () => {
+  /* const filtrarEducacionMexico = () => {
     let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(filtradoEduc);
     let listaHTML = document.getElementById('list');
 
     limpiarListaIndicadores(listaHTML);
     imprimirIndicadores(arrayFiltrado, listaHTML);
   };
-  botonFiltroEducacion.addEventListener('click', filtrarEducacionMexico);
+  botonFiltroEducacion.addEventListener('click', filtrarEducacionMexico);*/
 };
 botonMexico.addEventListener('click', goMexico); 
 
@@ -134,7 +131,6 @@ const goBrasil = () => {
   document.getElementById('ind-text').innerHTML = 'Indicadores de Brasil';
 
   let listaHTML = document.getElementById('list');
-
   limpiarListaIndicadores(listaHTML);
   imprimirIndicadores(arrayDeIndicadoresDeBrasil, listaHTML);
 };
@@ -156,7 +152,7 @@ const goChile = () => {
 };
 
 botonChile.addEventListener('click', goChile);
-
+// ----------------------------------------------------------------------------- //
 function imprimirIndicador(indicador, listaHTML) {
   let nombreIndicador = indicador ;// obtengo el nombre del indicador
   let nodoIndicador = document.createTextNode(nombreIndicador);// creo el texto HTML con el nombre del indicador
@@ -164,3 +160,4 @@ function imprimirIndicador(indicador, listaHTML) {
   nodoEntradaLista.appendChild(nodoIndicador);// inserto el texto(nombre del indicador) en la entrada de la lista
   listaHTML.appendChild(nodoEntradaLista);// inserto la entrada de la lista ahora con el texto en el documento HTML
 }
+// -----------------------------ocultar todo--------------------//
