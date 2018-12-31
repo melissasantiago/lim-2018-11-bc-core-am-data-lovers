@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
@@ -15,9 +15,22 @@
       <div id='header'>
       <div class='container'>
         <!--<form id="logotype">-->
-          <img id="logotype' src="imagenes/datbank.png" alt="logo de Data World Bank">
-           <input class='field-input" type='text' placeholder='Search...'>
+          <img id='logotype' src='imagenes/datbank.png' alt="logo de Data World Bank" />
+           <input type='text' class='search-input' id='field-input' placeholder='Search...' />
            <i class='bx bx-search' aria-hidden="true"></i>
+           <div class='data-filter'><label class='data-filt-txt'>Buscar información:</label>
+               <ul class='ind-option-1'>
+                 <li class='ind-option-2'>
+                   <a href="">Por país</a>
+                 </li>
+                 <li class='ind-option-3'>
+                   <a href="">Por Tema</a>
+                 </li>
+                 <li class='ind-option-4'>
+                   <a href="">Por año</a>
+                 </li>
+               </ul>
+           </div>
      </div>
    </div>
     </header>
@@ -37,21 +50,28 @@
     <section class="text-0"> <h4>Banco de datos: Región Latinoamérica</h4>
      <p>Estadísticas del mundo real para la comunidad del desarrollo </p>
       <img class='worldmap' src='imagenes/worldmap.png' alt='logo de Data World Bank'>
-     <h5>Indicadores más destacados</h5>
     </section>
     <aside class='text-1'>
       <label> Gracias al fuerte liderazgo nacional y las reformas ambiciosas, la mayoría de las partes del mundo han experimentado una expansión en el acceso a los servicios de salud y acciones para garantizar la asequibilidad. Sin embargo, a pesar de esto, la mitad de la población mundial todavía no puede acceder a los servicios de salud necesarios y 100 millones de personas son empujadas a la pobreza extrema cada año debido a los gastos de salud, según una investigación reciente del Grupo del Banco Mundial y la Organización Mundial de la Salud (OMS).</label>
-      <div class="data-filter"><label>Buscar información:</label>
-          <ul class='ind-option-1'>
-            <li class='ind-option-2'>
-              <a href="">Por país</a>
-            </li>
-            <li class='ind-option-3'>
-              <a href="">Por Tema</a>
-            </li>
-          </ul>
-      </div>
      </aside>
+     <div class="root-pictures">
+        <div class='root-item-1'>
+             <p class='root-txt'>Brasil, desempleo en mujeres</p>
+             <img class='country-pic' src='imagenes/brasil-workers.jpg' alt=''>
+           </div>
+            <div class='root-item'>
+                 <p class='root-txt'>Peru, perseverancia en la escuela</p>
+                 <img class='country-pic' src='imagenes/peru-childrens.jpg' alt=''>
+                </div>
+                <div class='root-item'>
+                      <p class='root-txt'>Chile, educación terciaria</p>
+                      <img class='country-pic' src='imagenes/chile-education.jpg' alt=''>
+                    </div>
+                    <div class='root-item'>
+                          <p class='root-txt'>Mexico, índice de mujeres en capital humano</p>
+                          <img class='country-pic' src='imagenes/mexico-women.jpg' alt=''>
+                        </div>
+                     </div>
     </div>
     <!--<div id='second-page'>
       <section class='most-visited-ind'>
@@ -62,9 +82,9 @@
     <section class="ind-text-1">
       <form class='indicator-tittle'>
           <h3 id='ind-text' class='ind-title'> Indicadores</h3>
-          <label class='filter-by-year'> Por año: <input id='year' type='number' min='1960' max='2017' step='1' value='2006' ></label>
+          <label class='filter-by-year'> Por año: <input id='year' class='by-year' type='number' min='1960' max='2017' step='1' value='2006' ></label>
       </form>
-      <table id='out'>
+     <table id='out'>
         <tr>
           <td>Indicadores</td>
           <td>Valores</td>
