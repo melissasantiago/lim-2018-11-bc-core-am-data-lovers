@@ -15,21 +15,29 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     width: 250px;
-    margin: 10 20px;
+    margin: 10 50px;
   }
 
-.container .field-input {
+.container {
+  margin-left: 3%;
+    padding-bottom: 4%;
+    padding-top: 4%;
+}
+
+.field-input {
     width:50%;
+    height: 20%;
     margin-left: 1%;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     margin-right: 20px;
   }
 
-input{
+.search-input {
+  margin-left: 30px;
   width: 50%;
-  height: 25px;
-box-sizing: border-box;
-border-radius: 4px;
+  height: 27px;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 #welcome {
@@ -132,10 +140,9 @@ padding-left: 30px;
 
 .text-0 {
   width: 60%;
-  font-family: 'Andes Bold', arial;
-font-size: 22px;
-text-shadow: 1px 1px 1px #aaa;
-
+ font-family: 'Andes Bold', arial;
+ font-size: 22px;
+ text-shadow: 1px 1px 1px #aaa;
 }
 
 .text-1 {
@@ -180,7 +187,51 @@ text-shadow: 1px 1px 1px #aaa;
   margin-left: 15px;
   margin-bottom: 80px;
   width: 1050px;
+}
+.root-pictures {
+  min-height: 100vh;
+  margin: 0;
+}
 
+.root-item, .root-item-1 {
+  width: 80%;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.root-item:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0), black);
+}
+
+.root-item-1:before {
+  content: '';
+  width: 100%;
+  height: 26%;
+  position: absolute;
+  top: 762px;
+  right: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0), black);
+}
+
+.country-pic{
+  width: 100%;
+  display: block;
+}
+
+.root-txt {
+  position: absolute;
+  bottom: 20px;
+  left: 13px;
+  color: white;
+  font-family: arial;
+  font-size: 2em;
 }
 
 .pie-pagina{

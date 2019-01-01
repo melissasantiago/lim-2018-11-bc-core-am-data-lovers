@@ -72,6 +72,16 @@ const goPeru = () => {
   botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
   botonFiltroProteccion.addEventListener('click', filtrarProteccionPeru);
   botonFiltroFinanzas.addEventListener('click', filtrarFinanzasPeru);*/
+
+// ********* TERCERA VENTANA PARA MOSTRAR TABLA DE RESULTADO************ //
+let perIndicatorsList = document.getElementById('list')
+const indicatorPerResult = () => {
+  let indResult = valuesListPeru(getPerValues);
+  limpiarListaIndicadores(listaHTML);
+  getPerValues(one);
+};
+perIndicatorsList.addEventListener('click', perIndicatorsList);
+// ********* aquí termina************ //
 };
 
 // CUANDO SE HAGA CLICK EN EL BOTON DE PERU SE REALIZARA LO QUE ES GOPERU
