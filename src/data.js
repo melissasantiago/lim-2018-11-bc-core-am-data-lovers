@@ -9,9 +9,6 @@ window.example = example;
 */
 
 const allTheData = Object.entries(WORLDBANK); // con Object.entries convertimos en array y lo declaramos en la variable allTheData
-// console.log(allTheData);
-/* const data = WORLDBANK.value;
-const newDataBank = []*/
 const dataClone = (dataBank) => { // Clona toda la data para solo usar dataClone
   const newDataBank = [];
   for (let i = 0; i < dataBank.length; i++) {
@@ -64,8 +61,8 @@ arrayDeIndicadoresDeBrasil.sort(comparaIndicadores);
 arrayDeIndicadoresDeChile.sort(comparaIndicadores);//
 
 // -------------------------------------------------------------------------//
-const one = WORLDBANK.PER.indicators;
-const getPerValues = (valuesList) => {
+/* const one = WORLDBANK.PER.indicators;
+// const getPerValues = (valuesList) => {
 for (let i = 0; i < one.length; i++) {
   //debugger
   const code = one[i].indicatorCode;
@@ -77,9 +74,6 @@ for (let i = 0; i < one.length; i++) {
     <td>${two}</td>
   </tr>
 `;
-//debugger
-//let link = document.getElementById(code);
-//link.addEventListener('click', console.log(code));
-}
- };
-const valuesListPeru = getPerValues(one);
+}*/
+// };
+// const valuesListPeru = getPerValues(one);

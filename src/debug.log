@@ -1,0 +1,1 @@
+[1217/153354.103:ERROR:file_io_win.cc(243)] SetEndOfFile: La operación solicitada no se puede realizar en un archivo con una sección asignada a usuario abierta. (0x4C8)

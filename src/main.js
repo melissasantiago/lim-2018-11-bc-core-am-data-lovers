@@ -11,7 +11,8 @@ const limpiarListaIndicadores = (listaHTML) => {
 const imprimirIndicadores = (arregloIndicadores, listaHTML) => {
   for (let i = 0; i < arregloIndicadores.length; i++) {
     let indicador = arregloIndicadores[i].indicatorName;// obtengo el nombre del indicador
-    imprimirIndicador(indicador, listaHTML);
+    let id = arregloIndicadores[i].indicatorCode;
+    imprimirIndicador(id, indicador, listaHTML);
   }
 };
 
@@ -21,12 +22,16 @@ const funcFiltroPob = (elemento) => {
   let inicialesPob = codigoIndicador.slice(0, 6);
   return inicialesPob === 'SP.POP';
 };
-
- const funcFiltroVio = (elemento1) => {
+const funcFiltroVio = (elemento1) => {
   let codigoIndicador1 = elemento1.indicatorCode;
-  let inicialesVio = codigoIndicador1.slice(0, 3)
-  return incialesVio === 'SG.';
-
+  let inicialesVio = codigoIndicador1.slice(0, 3);
+  return inicialesVio === 'SG.';
+};
+const funcFiltroEduc = (elemento2) => {
+  let codigoIndicador2 = elemento2.indicatorCode;
+  let inicialesEduc = codigoIndicador2.slice(0, 3);
+  return inicialesEduc === 'SE.';
+  // if (codigo.slice(0, 3) === 'SE.') {*/
 };
 
 // -----------------------------------PERU---------------------------------//
@@ -51,16 +56,15 @@ const goPeru = () => {
 
   // OBTENEMOS BOTONES LATERALES DERECHOS
   let botonFiltroPoblacion = document.getElementById('filter-pob');
-
-  /* let botonFiltroEducacion = document.getElementById('filter-edu');
-  let botonFiltroProteccion = document.getElementById('filter-prot');
+  let botonFiltroViolencia = document.getElementById('filter-vio');
+  let botonFiltroEducacion = document.getElementById('filter-edu');
+  /* let botonFiltroProteccion = document.getElementById('filter-prot');
   let botonFiltroFinanzas = document.getElementById('filter-fin');*/
 
   // FUNCION DE FILTRADO
   const filtrarPoblacionPeru = () => {
     // reducir el arreglo
     let arrayFiltrado = arrayDeIndicadoresDePeru.filter(funcFiltroPob);
-
     let listaHTML = document.getElementById('list');
     limpiarListaIndicadores(listaHTML);
     imprimirIndicadores(arrayFiltrado, listaHTML);
@@ -69,19 +73,9 @@ const goPeru = () => {
   // CUANDO SE HAGA CLICK EN EL BOTON "POBLACION", SE LLAMARA A LA FUNCION YA DEFINIDA ARRIBA filtrarPoblacionPeru
   botonFiltroPoblacion.addEventListener('click', filtrarPoblacionPeru);
 
-  let botonFiltroViolencia = document.getElementById('filter-vio');
-  const filtrarViolenciaPeru = () => {
-    // reducir el arreglo
-    let arrayFiltrado1 = arrayDeIndicadoresDePeru.filter(funcFiltroVio);
-
-    let listaHTML = document.getElementById('list');
-    limpiarListaIndicadores(listaHTML);
-    imprimirIndicadores(arrayFiltrado1, listaHTML);
-  };
-
-  botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
-  /*   botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
-  botonFiltroProteccion.addEventListener('click', filtrarProteccionPeru);
+  //botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
+  //botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
+  /* botonFiltroProteccion.addEventListener('click', filtrarProteccionPeru);
   botonFiltroFinanzas.addEventListener('click', filtrarFinanzasPeru);*/
 
 // ********* TERCERA VENTANA PARA MOSTRAR TABLA DE RESULTADO************ //
@@ -115,31 +109,37 @@ const goMexico = () => {
 
 
   let botonFiltroPoblacion = document.getElementById('filter-pob');
-  /* let botonFiltroViolencia = document.getElementById('filter-vio');
+  let botonFiltroViolencia = document.getElementById('filter-vio');
   let botonFiltroEducacion = document.getElementById('filter-edu');
-  let botonFiltroProteccion = document.getElementById('filter-prot');
-  let botonFiltroFinanzas = document.getElementById('filter-fin');*/
+  // let botonFiltroProteccion = document.getElementById('filter-prot');
+  // let botonFiltroFinanzas = document.getElementById('filter-fin');
 
 
   const filtrarPoblacionMexico = () => {
     let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(funcFiltroPob);
-
     let listaHTML = document.getElementById('list');
     limpiarListaIndicadores(listaHTML);
     imprimirIndicadores(arrayFiltrado, listaHTML);
   };
-
   botonFiltroPoblacion.addEventListener('click', filtrarPoblacionMexico);
 
-  /* const filtrarEducacionMexico = () => {
-    let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(filtradoEduc);
+  const filtrarViolenciaMexico = () => {
+    let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(funcFiltroVio);
     let listaHTML = document.getElementById('list');
-
     limpiarListaIndicadores(listaHTML);
     imprimirIndicadores(arrayFiltrado, listaHTML);
   };
-  botonFiltroEducacion.addEventListener('click', filtrarEducacionMexico);*/
+  botonFiltroViolencia.addEventListener('click', filtrarViolenciaMexico);
+
+  const filtrarEducacionMexico = () => {
+    let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(funcFiltroEduc);
+    let listaHTML = document.getElementById('list');
+    limpiarListaIndicadores(listaHTML);
+    imprimirIndicadores(arrayFiltrado, listaHTML);
+  };
+  botonFiltroEducacion.addEventListener('click', filtrarEducacionMexico);
 };
+
 botonMexico.addEventListener('click', goMexico);
 
 // -----------------------------------BRASIL---------------------------------//
@@ -172,13 +172,25 @@ const goChile = () => {
   imprimirIndicadores(arrayDeIndicadoresDeChile, listaHTML);
 };
 
+const abrirIndicador = (evt) => {
+  let id = evt.target.id;
+  for (elemento of allTheData[0][1].indicators) {
+
+    if (elemento.indicatorCode === id) {
+    console.log(elemento)
+    }
+  }
+}
+
 botonChile.addEventListener('click', goChile);
 // ----------------------------------------------------------------------------- //
-function imprimirIndicador(indicador, listaHTML) {
+function imprimirIndicador(id, indicador, listaHTML) {
   let nombreIndicador = indicador ;// obtengo el nombre del indicador
   let nodoIndicador = document.createTextNode(nombreIndicador);// creo el texto HTML con el nombre del indicador
   let nodoEntradaLista = document.createElement('li');// creo la entrada de lista sin texto
+  nodoEntradaLista.setAttribute('id', id);
   nodoEntradaLista.appendChild(nodoIndicador);// inserto el texto(nombre del indicador) en la entrada de la lista
+  nodoEntradaLista.addEventListener('click', abrirIndicador);
   listaHTML.appendChild(nodoEntradaLista);// inserto la entrada de la lista ahora con el texto en el documento HTML
 }
 // -----------------------------ocultar todo--------------------//
