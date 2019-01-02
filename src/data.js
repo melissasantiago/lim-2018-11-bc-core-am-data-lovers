@@ -1,43 +1,78 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-//Convertir a Array
-//console.log(Object.entries(WORLDBANK))
-const allTheData = Object.entries(WORLDBANK);
-console.log(allTheData)
-/*const data = WORLDBANK.value;
-const newDataBank = []*/
+/* const example = () => {
+  return 'example';
+};
 
-//Clona toda la data para solo usar dataClone
-const dataClone = (dataBank) => {
+window.example = example;
+*/
+
+const allTheData = Object.entries(WORLDBANK); // con Object.entries convertimos en array y lo declaramos en la variable allTheData
+// console.log(allTheData);
+/* const data = WORLDBANK.value;
+const newDataBank = []*/
+const dataClone = (dataBank) => { // Clona toda la data para solo usar dataClone
   const newDataBank = [];
-  for (let i = 0; i < dataBank.length; i++){
-    //newDataBank.push(dataBank[i])
-    console.log(dataBank[i])
-    newDataBank.push(Object.assign({},dataBank[i]))
+  for (let i = 0; i < dataBank.length; i++) {
+    newDataBank.push(Object.assign({}, dataBank[i]));
   }
   return newDataBank;
-}
-//Esto funciona solo con la funcion de arriba
-//dataClone(allTheData);
-
-//const example = () => {
-  //return 'example';
-//};
-
-function filterData(PER) {
-  return PER === [5];
-}
- const filterList = (PER, indicatorName ) => {
- const indicatorsList = PER.indicatorName.filter(filterData);
- }
-
- console.log(indicatorsList);
-
-
-//sortData(data, sortBy, sortOrder)
-//computeStats(data)
-window.data = {
-  filterData:filterData,
-  //sortData:sortData
 };
+
+const data = dataClone(allTheData); // data es una array con 4 objetos (cada objeto es un pais)
+
+const getDataPeru = (arrayDePaises) => {
+  const dataDePeru = arrayDePaises[0]; // un objeto con 2 propiedades que tiene la data de peru
+  return dataDePeru['1'].indicators; // console.log(getDataPeru);
+};
+const getDataMexico = (arrayDePaises) => {
+  const dataDeMexico = arrayDePaises[1];
+  return dataDeMexico['1'].indicators;
+};
+const getDataBrasil = (arrayDePaises) => {
+  const dataDeBrasil = arrayDePaises[2];
+  return dataDeBrasil['1'].indicators;
+};
+
+const getDataChile = (arrayDePaises) => {
+  const dataDeChile = arrayDePaises[3];
+  return dataDeChile['1'].indicators;
+};
+
+const arrayDeIndicadoresDePeru = getDataPeru(data); // console.log(arrayDeIndicadoresDePeru);//
+const arrayDeIndicadoresDeMexico = getDataMexico(data);
+const arrayDeIndicadoresDeBrasil = getDataBrasil(data);
+const arrayDeIndicadoresDeChile = getDataChile(data);
+
+const comparaIndicadores = (indicat1, indicat2) => {
+  // extraer los nombres ponemos variables para no poner en las condiciones indicatorName a cada rato
+  let nombreInd1 = indicat1.indicatorName;
+  let nombreInd2 = indicat2.indicatorName;
+  // condiciones para ordenar alfabeticamente ver MDN
+  if (nombreInd1 < nombreInd2)
+    return -1;
+  if (nombreInd1 > nombreInd2)
+    return +1;
+  if (nombreInd1 === nombreInd2)
+    return 0;
+};
+
+arrayDeIndicadoresDePeru.sort(comparaIndicadores);
+arrayDeIndicadoresDeMexico.sort(comparaIndicadores);//
+arrayDeIndicadoresDeBrasil.sort(comparaIndicadores);
+arrayDeIndicadoresDeChile.sort(comparaIndicadores);//
+
+// -------------------------------------------------------------------------//
+
+const one = WORLDBANK.PER.indicators;
+for (let i = 0; i < one.length; i++) {
+  const two = one[i].data[document.getElementById('year').value];
+  const three = one[i].indicatorName;
+  document.getElementById('out').innerHTML += `
+  <tr>
+    <td>${three}</td>
+    <td>${two}</td>
+  </tr>
+`;
+}

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,76 +5,93 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link href='https://cdn.jsdelivr.net/npm/boxicons@1.8.1/css/boxicons.min.css' rel='stylesheet'>
-  </head>
+    <link href="http://allfont.es/allfont.css?fonts=andes-bold" rel="stylesheet" type="text/css" />
   <body>
   <div id="root">
+    <div id='header-root'>
         <header>
-      <div id="header">
-      <div class="container">
+      <div id='header'>
+      <div class='container'>
         <!--<form id="logotype">-->
-          <img id="logotype" src="imagenes/datbank.png" alt="logo de Data World Bank">
-           <input class="field-input" type='text' placeholder='Search...'>
+          <img id="logotype' src="imagenes/datbank.png" alt="logo de Data World Bank">
+           <input class='field-input" type='text' placeholder='Search...'>
            <i class='bx bx-search' aria-hidden="true"></i>
      </div>
    </div>
     </header>
-    <section id="welcome">
-        <nav class="menu-1">
-        <ul class="menu-2">
-          <li class="country"><a class="country-links">Perú</a></li>
-          <li class="country"><a class="country-links">Mexico</a></li>
-          <li class="country"><a class="country-links">Chile</a></li>
-          <li class="country"><a class="country-links">Brasil</a></li>
+    <section id='welcome'>
+        <nav class='menu-1'>
+        <ul class='menu-2'>
+          <li class='country' id='btn-per'><a class='country-links'>Perú</a></li>
+          <li class='country' id='btn-mex'><a class='country-links'>Mexico</a></li>
+          <li class='country' id='btn-bra'><a class='country-links'>Brasil</a></li>
+          <li class='country' id='btn-chi'><a class='country-links'>Chile</a></li>
         </ul>
       </nav>
     </section>
-    <div id="initial-page"> <h4>Banco de datos: Región Latinoamérica</h4>
-      <p>Estadísticas del mundo real para la comunidad del desarrollo <img id="worldmap" src="imagenes/worldmap.png" alt="logo de Data World Bank"></p>
-
-    </div>
   </div>
-  <div id="indicators">
-    <form class="indicator-tittle">
-          <h3 class="ind-title"> Indicadores</h3>
-          <label class="filter-by-year"> Por año: <input type="number" min="1960" max="2017" step="1" value="2016"></label>
-    </form>
-    <form>
-      <p id="list"></p>
-    </form>
-      <section id="themes">
-          <nav class="themes-1">
-            <label class="themes-tittle">Temas</label>
-          <ul class="themes-2">
-            <li class="sub-theme"><a class="themes-links">Agricultura y desarrollo rural</a></li>
-            <li class="sub-theme"><a class="themes-links">Cambio climático</a></li>
-            <li class="sub-theme"><a class="themes-links">Ciencia y tecnología</a></li>
-            <li class="sub-theme"><a class="themes-links">Comercio</a></li>
-            <li class="sub-theme"><a class="themes-links">Desarrollo social</a></li>
-            <li class="sub-theme"><a class="themes-links">Desarrollo urbano</a></li>
-            <li class="sub-theme"><a class="themes-links">Deuda externa</a></li>
-            <li class="sub-theme"><a class="themes-links">Economía y crecimiento</a></li>
-            <li class="sub-theme"><a class="themes-links">Edcuación</a></li>
-            <li class="sub-theme"><a class="themes-links">Eficacia de la aydua</a></li>
-            <li class="sub-theme"><a class="themes-links">Género</a></li>
-            <li class="sub-theme"><a class="themes-links">Infraestructura</a></li>
-            <li class="sub-theme"><a class="themes-links">Medio ambiente</a></li>
-            <li class="sub-theme"><a class="themes-links">Pobreza</a></li>
-            <li class="sub-theme"><a class="themes-links">Protección social y de trabajo</a></li>
-            <li class="sub-theme"><a class="themes-links">Salud</a></li>
-            <li class="sub-theme"><a class="themes-links">Sector financiero</a></li>
-            <li class="sub-theme"><a class="themes-links">Sector Privado</a></li>
-            <li class="sub-theme"><a class="themes-links">Sector público</a></li>
+</div>
+    <div id='initial-page' class='initial'>
+    <section class="text-0"> <h4>Banco de datos: Región Latinoamérica</h4>
+     <p>Estadísticas del mundo real para la comunidad del desarrollo </p>
+      <img class='worldmap' src='imagenes/worldmap.png' alt='logo de Data World Bank'>
+     <h5>Indicadores más destacados</h5>
+    </section>
+    <aside class='text-1'>
+      <label> Gracias al fuerte liderazgo nacional y las reformas ambiciosas, la mayoría de las partes del mundo han experimentado una expansión en el acceso a los servicios de salud y acciones para garantizar la asequibilidad. Sin embargo, a pesar de esto, la mitad de la población mundial todavía no puede acceder a los servicios de salud necesarios y 100 millones de personas son empujadas a la pobreza extrema cada año debido a los gastos de salud, según una investigación reciente del Grupo del Banco Mundial y la Organización Mundial de la Salud (OMS).</label>
+      <div class="data-filter"><label>Buscar información:</label>
+          <ul class='ind-option-1'>
+            <li class='ind-option-2'>
+              <a href="">Por país</a>
+            </li>
+            <li class='ind-option-3'>
+              <a href="">Por Tema</a>
+            </li>
           </ul>
-        </nav>
+      </div>
+     </aside>
+    </div>
+    <!--<div id='second-page'>
+      <section class='most-visited-ind'>
+        <h5>Indicadores más destacados</h5>
       </section>
+    </div> !-->
+  <div id='indicators' class="ind-space">
+    <section class="ind-text-1">
+      <form class='indicator-tittle'>
+          <h3 id='ind-text' class='ind-title'> Indicadores</h3>
+          <label class='filter-by-year'> Por año: <input id='year' type='number' min='1960' max='2017' step='1' value='2006' ></label>
+      </form>
+      <table id='out'>
+        <tr>
+          <td>Indicadores</td>
+          <td>Valores</td>
+        </tr>
+      </table>
+      <ul class='indicators-list' id='list'>
+      </ul>
+    </section>
+    <aside class="ind-text-2">
+      <section id='themes'>
+          <nav class='themes-1'>
+            <label class='themes-tittle'>Temas</label>
+          <ul class='themes-2'>
+            <li class='sub-theme'><a id="filter-pob" class='themes-links'>Población</a></li>
+            <li class='sub-theme'><a id="filter-vio" class='themes-links'>Violencia de género</a></li>
+            <li class='sub-theme'><a id="filter-edu" class='themes-links'>Educación</a></li>
+            <li class='sub-theme'><a id="filter-prot" class='themes-links'>Protección social y de trabajo</a></li>
+            <li class='sub-theme'><a id="filter-fin" class='themes-links'>Sector financiero</a></li>
+          </ul>
+          </nav>
+      </section>
+    </aside>
   </div>
-
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
+  <div class='footer'>
+<footer class='pie-pagina'></footer>
+  </div>
       <script src="./data/worldbank/worldbank.js"></script>
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+      <script src='data.js'></script>
+      <script src='main.js'></script>
   </body>
+    </head>
 </html>
