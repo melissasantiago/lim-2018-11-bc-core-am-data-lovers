@@ -22,11 +22,12 @@ const funcFiltroPob = (elemento) => {
   return inicialesPob === 'SP.POP';
 };
 
-/* const funfiltroEduc = (elemento1) => {
-  let codigo = elemento1.indicatorCode;
-  if (codigo.slice(0, 3) === 'SE.') {*/
+ const funcFiltroVio = (elemento1) => {
+  let codigoIndicador1 = elemento1.indicatorCode;
+  let inicialesVio = codigoIndicador1.slice(0, 3)
+  return incialesVio === 'SG.';
 
-/* };*/
+};
 
 // -----------------------------------PERU---------------------------------//
 // OBTENER EL BOTON DE ARRIBA
@@ -50,8 +51,8 @@ const goPeru = () => {
 
   // OBTENEMOS BOTONES LATERALES DERECHOS
   let botonFiltroPoblacion = document.getElementById('filter-pob');
-  /* let botonFiltroViolencia = document.getElementById('filter-vio');
-  let botonFiltroEducacion = document.getElementById('filter-edu');
+
+  /* let botonFiltroEducacion = document.getElementById('filter-edu');
   let botonFiltroProteccion = document.getElementById('filter-prot');
   let botonFiltroFinanzas = document.getElementById('filter-fin');*/
 
@@ -68,8 +69,18 @@ const goPeru = () => {
   // CUANDO SE HAGA CLICK EN EL BOTON "POBLACION", SE LLAMARA A LA FUNCION YA DEFINIDA ARRIBA filtrarPoblacionPeru
   botonFiltroPoblacion.addEventListener('click', filtrarPoblacionPeru);
 
-  /* botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
-  botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
+  let botonFiltroViolencia = document.getElementById('filter-vio');
+  const filtrarViolenciaPeru = () => {
+    // reducir el arreglo
+    let arrayFiltrado1 = arrayDeIndicadoresDePeru.filter(funcFiltroVio);
+
+    let listaHTML = document.getElementById('list');
+    limpiarListaIndicadores(listaHTML);
+    imprimirIndicadores(arrayFiltrado1, listaHTML);
+  };
+
+  botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
+  /*   botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
   botonFiltroProteccion.addEventListener('click', filtrarProteccionPeru);
   botonFiltroFinanzas.addEventListener('click', filtrarFinanzasPeru);*/
 
