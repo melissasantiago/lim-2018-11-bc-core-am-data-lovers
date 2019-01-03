@@ -84,7 +84,7 @@ let perIndicatorsList = document.getElementById('list')
 const indicatorPerResult = () => {
   let indResult = valuesListPeru(getPerValues);
   limpiarListaIndicadores(listaHTML);
-  getPerValues(one);
+getPerValues(one);
 };
 perIndicatorsList.addEventListener('click', perIndicatorsList);
 // ********* aquí termina************ //
@@ -175,12 +175,23 @@ const goChile = () => {
 };
 
 const abrirIndicador = (evt) => {
-  let id = evt.target.id;
-  for (elemento of allTheData[0][1].indicators) {
+//debugger
+  let id = evt.currentTarget.id;
+  let templateList = '';
+  for (elemento of allTheData[3][1].indicators) {
 
     if (elemento.indicatorCode === id) {
-    console.log(elemento)
+      //debugger
+    /*const printIndicator = allTheData.forEach((i) => {
+      const li = `<label>${i.id}</label>`;
+      templateList += li;
+    });*/
+        const year = document.getElementById('year').value;
+        templateList = `<label>${elemento.data[year]}</label>`;
+
+    // console.log(elemento)
     }
+    const span = document.getElementById('txt-id').innerHTML = templateList;
   }
 }
 
@@ -190,9 +201,9 @@ function imprimirIndicador(id, indicador, listaHTML) {
   let nombreIndicador = indicador ;// obtengo el nombre del indicador
   let nodoIndicador = document.createTextNode(nombreIndicador);// creo el texto HTML con el nombre del indicador
   let nodoEntradaLista = document.createElement('li');// creo la entrada de lista sin texto
-  nodoEntradaLista.setAttribute('id', id);
+  nodoEntradaLista.setAttribute('id', id); // hace que valores de id se "igualen"
   nodoEntradaLista.appendChild(nodoIndicador);// inserto el texto(nombre del indicador) en la entrada de la lista
-  nodoEntradaLista.addEventListener('click', abrirIndicador);
+  nodoEntradaLista.addEventListener('click', abrirIndicador); // al hacer click en el indicador
   listaHTML.appendChild(nodoEntradaLista);// inserto la entrada de la lista ahora con el texto en el documento HTML
 }
 // -----------------------------ocultar todo--------------------//
