@@ -64,11 +64,13 @@ arrayDeIndicadoresDeChile.sort(comparaIndicadores);//
 /* const one = WORLDBANK.PER.indicators;
 // const getPerValues = (valuesList) => {
 for (let i = 0; i < one.length; i++) {
+  //debugger
+  const code = one[i].indicatorCode;
   const two = one[i].data[document.getElementById('year').value];
   const three = one[i].indicatorName;
   document.getElementById('out').innerHTML += `
   <tr>
-    <td>${three}</td>
+    <td id="${code}">${three}</td>
     <td>${two}</td>
   </tr>
 `;
