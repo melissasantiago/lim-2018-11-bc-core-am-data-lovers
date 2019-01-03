@@ -1,6 +1,7 @@
 const inicioPantalla = () => {
   document.getElementById('initial-page').style.display = 'block';
   document.getElementById('indicators').style.display = 'none';
+  document.getElementById('indStatus').style.display = 'none';
 };
 inicioPantalla();
 
@@ -102,6 +103,7 @@ const goMexico = () => {
   document.getElementById('indicators').style.display = 'block';
   document.getElementById('initial-page').style.display = 'none';
   document.getElementById('ind-text').innerHTML = 'Indicadores de México';
+  document.getElementById('indStatus').style.display = 'block';
 
   let listaHTML = document.getElementById('list');
   limpiarListaIndicadores(listaHTML);
@@ -194,3 +196,19 @@ function imprimirIndicador(id, indicador, listaHTML) {
   listaHTML.appendChild(nodoEntradaLista);// inserto la entrada de la lista ahora con el texto en el documento HTML
 }
 // -----------------------------ocultar todo--------------------//
+
+//*** let goToId = document.getElementById('id');
+
+// QUE DEBE HACER CUANDO SE HAGA GOTOID
+//**** const goId = () => {
+  // OCULTA CIERTOS ELEMENTOS QUE NO DEBERIAN SER VISIBLES
+//***  document.getElementById('root').style.display = 'block';
+//***   document.getElementById('indicators').style.display = 'block';
+//*** document.getElementById('initial-page').style.display = 'none';
+//***   document.getElementById('id-text').innerHTML = 'Indicador de México';
+
+  // OBTENEMOS EL ELEMENTO HTML DEL INDICADOR
+  // let listaHTML = document.getElementById('list');
+
+  // LIMPIAMOS E IMPRIMIMOS LA LISTA DE INDICADORES TOTAL
+//*** limpiarListaIndicadores(listaHTML);
