@@ -1,3 +1,55 @@
+const allTheData = Object.entries(WORLDBANK); // con Object.entries convertimos en array y lo declaramos en la variable allTheData
+const dataClone = (dataBank) => { // Clona toda la data para solo usar dataClone
+  const newDataBank = [];
+  for (let i = 0; i < dataBank.length; i++) {
+    newDataBank.push(Object.assign({}, dataBank[i]));
+  }
+  return newDataBank;
+};
+
+const data = dataClone(allTheData); // data es una array con 4 objetos (cada objeto es un pais)
+
+const getDataPeru = (arrayDePaises) => {
+  const dataDePeru = arrayDePaises[0]; // un objeto con 2 propiedades que tiene la data de peru
+  return dataDePeru['1'].indicators; // console.log(getDataPeru);
+};
+const getDataMexico = (arrayDePaises) => {
+  const dataDeMexico = arrayDePaises[1];
+  return dataDeMexico['1'].indicators;
+};
+const getDataBrasil = (arrayDePaises) => {
+  const dataDeBrasil = arrayDePaises[2];
+  return dataDeBrasil['1'].indicators;
+};
+
+const getDataChile = (arrayDePaises) => {
+  const dataDeChile = arrayDePaises[3];
+  return dataDeChile['1'].indicators;
+};
+
+const arrayDeIndicadoresDePeru = getDataPeru(data); // console.log(arrayDeIndicadoresDePeru);//
+const arrayDeIndicadoresDeMexico = getDataMexico(data);
+const arrayDeIndicadoresDeBrasil = getDataBrasil(data);
+const arrayDeIndicadoresDeChile = getDataChile(data);
+
+const comparaIndicadores = (indicat1, indicat2) => {
+// extraer los nombres ponemos variables para no poner en las condiciones indicatorName a cada rato
+  let nombreInd1 = indicat1.indicatorName;
+  let nombreInd2 = indicat2.indicatorName;
+  // condiciones para ordenar alfabeticamente ver MDN
+  if (nombreInd1 < nombreInd2)
+    return -1;
+  if (nombreInd1 > nombreInd2)
+    return +1;
+  if (nombreInd1 === nombreInd2)
+    return 0;
+};
+
+arrayDeIndicadoresDePeru.sort(comparaIndicadores);
+arrayDeIndicadoresDeMexico.sort(comparaIndicadores);//
+arrayDeIndicadoresDeBrasil.sort(comparaIndicadores);
+arrayDeIndicadoresDeChile.sort(comparaIndicadores);//
+
 const inicioPantalla = () => {
   document.getElementById('initial-page').style.display = 'block';
   document.getElementById('indicators').style.display = 'none';
@@ -17,23 +69,7 @@ const imprimirIndicadores = (arregloIndicadores, listaHTML) => {
   }
 };
 
-const funcFiltroPob = (elemento) => {
-  // debe retornar un valor verdadero o falso (booleano)
-  let codigoIndicador = elemento.indicatorCode;
-  let inicialesPob = codigoIndicador.slice(0, 6);
-  return inicialesPob === 'SP.POP';
-};
-const funcFiltroVio = (elemento1) => {
-  let codigoIndicador1 = elemento1.indicatorCode;
-  let inicialesVio = codigoIndicador1.slice(0, 3);
-  return inicialesVio === 'SG.';
-};
-const funcFiltroEduc = (elemento2) => {
-  let codigoIndicador2 = elemento2.indicatorCode;
-  let inicialesEduc = codigoIndicador2.slice(0, 3);
-  return inicialesEduc === 'SE.';
-  // if (codigo.slice(0, 3) === 'SE.') {*/
-};
+
 
 // -----------------------------------PERU---------------------------------//
 // OBTENER EL BOTON DE ARRIBA
@@ -65,7 +101,22 @@ const goPeru = () => {
   // FUNCION DE FILTRADO
   const filtrarPoblacionPeru = () => {
     // reducir el arreglo
-    let arrayFiltrado = arrayDeIndicadoresDePeru.filter(funcFiltroPob);
+    let arrayFiltrado = window.filtrarPoblacion(arrayDeIndicadoresDePeru);
+    let listaHTML = document.getElementById('list');
+    limpiarListaIndicadores(listaHTML);
+    imprimirIndicadores(arrayFiltrado, listaHTML);
+  };
+  const filtrarViolenciaPeru = () => {
+    // reducir el arreglo
+    let arrayFiltrado = window.filtrarViolencia(arrayDeIndicadoresDePeru);
+
+    let listaHTML = document.getElementById('list');
+    limpiarListaIndicadores(listaHTML);
+    imprimirIndicadores(arrayFiltrado, listaHTML);
+  };
+  const filtrarEducacionPeru = () => {
+    // reducir el arreglo
+    let arrayFiltrado = window.filtrarEducacion(arrayDeIndicadoresDePeru);
     let listaHTML = document.getElementById('list');
     limpiarListaIndicadores(listaHTML);
     imprimirIndicadores(arrayFiltrado, listaHTML);
@@ -73,9 +124,8 @@ const goPeru = () => {
 
   // CUANDO SE HAGA CLICK EN EL BOTON "POBLACION", SE LLAMARA A LA FUNCION YA DEFINIDA ARRIBA filtrarPoblacionPeru
   botonFiltroPoblacion.addEventListener('click', filtrarPoblacionPeru);
-
-  // botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
-  // botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
+  botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
+  botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
   /* botonFiltroProteccion.addEventListener('click', filtrarProteccionPeru);
   botonFiltroFinanzas.addEventListener('click', filtrarFinanzasPeru);*/
 
@@ -84,7 +134,7 @@ const goPeru = () => {
 const indicatorPerResult = () => {
     let indResult = valuesListPeru(getPerValues);
     limpiarListaIndicadores(listaHTML);
-getPerValues(one);
+    getPerValues(one);
   };
   perIndicatorsList.addEventListener('click', perIndicatorsList);
 // ********* aquí termina************ //
@@ -92,7 +142,6 @@ getPerValues(one);
 
 // CUANDO SE HAGA CLICK EN EL BOTON DE PERU SE REALIZARA LO QUE ES GOPERU
 botonPeru.addEventListener('click', goPeru);
-
 
 // -----------------------------------MEXICO---------------------------------//
 
@@ -199,7 +248,7 @@ function showYears() {
     });*/
       let year = document.getElementById('year').value;
       const year1 = document.getElementById('year1').value;
-      templateList = ``;
+      templateList = '';
       while (year <= year1) {
         templateList += `<div><b>${year}:  </b>${elemento.data[year]}</div>`;
         year++;
