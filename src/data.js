@@ -43,7 +43,7 @@ const arrayDeIndicadoresDeBrasil = getDataBrasil(data);
 const arrayDeIndicadoresDeChile = getDataChile(data);
 
 const comparaIndicadores = (indicat1, indicat2) => {
-  // extraer los nombres ponemos variables para no poner en las condiciones indicatorName a cada rato
+// extraer los nombres ponemos variables para no poner en las condiciones indicatorName a cada rato
   let nombreInd1 = indicat1.indicatorName;
   let nombreInd2 = indicat2.indicatorName;
   // condiciones para ordenar alfabeticamente ver MDN

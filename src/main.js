@@ -74,19 +74,19 @@ const goPeru = () => {
   // CUANDO SE HAGA CLICK EN EL BOTON "POBLACION", SE LLAMARA A LA FUNCION YA DEFINIDA ARRIBA filtrarPoblacionPeru
   botonFiltroPoblacion.addEventListener('click', filtrarPoblacionPeru);
 
-  //botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
-  //botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
+  // botonFiltroViolencia.addEventListener('click', filtrarViolenciaPeru);
+  // botonFiltroEducacion.addEventListener('click', filtrarEducacionPeru);
   /* botonFiltroProteccion.addEventListener('click', filtrarProteccionPeru);
   botonFiltroFinanzas.addEventListener('click', filtrarFinanzasPeru);*/
 
-// ********* TERCERA VENTANA PARA MOSTRAR TABLA DE RESULTADO************ //
-let perIndicatorsList = document.getElementById('list')
+  // ********* TERCERA VENTANA PARA MOSTRAR TABLA DE RESULTADO************ //
+  let perIndicatorsList = document.getElementById('list')
 const indicatorPerResult = () => {
-  let indResult = valuesListPeru(getPerValues);
-  limpiarListaIndicadores(listaHTML);
+    let indResult = valuesListPeru(getPerValues);
+    limpiarListaIndicadores(listaHTML);
 getPerValues(one);
-};
-perIndicatorsList.addEventListener('click', perIndicatorsList);
+  };
+  perIndicatorsList.addEventListener('click', perIndicatorsList);
 // ********* aquí termina************ //
 };
 
@@ -174,20 +174,36 @@ const goChile = () => {
   imprimirIndicadores(arrayDeIndicadoresDeChile, listaHTML);
 };
 
-const abrirIndicador = (evt) => {
-//debugger
-  let id = evt.currentTarget.id;
-  let templateList = '';
-  for (elemento of allTheData[3][1].indicators) {
+let selectedIndicator;
 
-    if (elemento.indicatorCode === id) {
-      //debugger
-    /*const printIndicator = allTheData.forEach((i) => {
+const abrirIndicador = (evt) => {
+// debugger
+  let id = evt.currentTarget.id;
+  selectedIndicator = id;
+
+  showYears();
+};
+document.getElementById('showyear').addEventListener('click', showYears);
+
+function showYears() {
+  let templateList = '';
+
+  // console.log(selectedIndicator);
+
+  for (let elemento of allTheData[3][1].indicators) {
+    if (elemento.indicatorCode === selectedIndicator) {
+      // debugger
+    /* const printIndicator = allTheData.forEach((i) => {
       const li = `<label>${i.id}</label>`;
       templateList += li;
     });*/
-        const year = document.getElementById('year').value;
-        templateList = `<label>${elemento.data[year]}</label>`;
+      let year = document.getElementById('year').value;
+      const year1 = document.getElementById('year1').value;
+      templateList = ``;
+      while (year <= year1) {
+        templateList += `<div><b>${year}:  </b>${elemento.data[year]}</div>`;
+        year++;
+      }
 
     // console.log(elemento)
     }
@@ -208,18 +224,18 @@ function imprimirIndicador(id, indicador, listaHTML) {
 }
 // -----------------------------ocultar todo--------------------//
 
-//*** let goToId = document.getElementById('id');
+// *** let goToId = document.getElementById('id');
 
 // QUE DEBE HACER CUANDO SE HAGA GOTOID
-//**** const goId = () => {
-  // OCULTA CIERTOS ELEMENTOS QUE NO DEBERIAN SER VISIBLES
-//***  document.getElementById('root').style.display = 'block';
-//***   document.getElementById('indicators').style.display = 'block';
-//*** document.getElementById('initial-page').style.display = 'none';
-//***   document.getElementById('id-text').innerHTML = 'Indicador de México';
+// **** const goId = () => {
+// OCULTA CIERTOS ELEMENTOS QUE NO DEBERIAN SER VISIBLES
+// ***  document.getElementById('root').style.display = 'block';
+// ***   document.getElementById('indicators').style.display = 'block';
+// *** document.getElementById('initial-page').style.display = 'none';
+// ***   document.getElementById('id-text').innerHTML = 'Indicador de México';
 
-  // OBTENEMOS EL ELEMENTO HTML DEL INDICADOR
-  // let listaHTML = document.getElementById('list');
+// OBTENEMOS EL ELEMENTO HTML DEL INDICADOR
+// let listaHTML = document.getElementById('list');
 
-  // LIMPIAMOS E IMPRIMIMOS LA LISTA DE INDICADORES TOTAL
-//*** limpiarListaIndicadores(listaHTML);
+// LIMPIAMOS E IMPRIMIMOS LA LISTA DE INDICADORES TOTAL
+// *** limpiarListaIndicadores(listaHTML);
