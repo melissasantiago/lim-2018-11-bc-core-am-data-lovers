@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link href='https://cdn.jsdelivr.net/npm/boxicons@1.8.1/css/boxicons.min.css' rel='stylesheet'>
     <link href="http://allfont.es/allfont.css?fonts=andes-bold" rel="stylesheet" type="text/css" />
+ </head>
  <body>
   <div id="root">
     <div id='header-root'>
@@ -29,19 +30,19 @@
                  </li>
                </ul>
            </div>
-     </div>
-   </div>
+    </div>
+    </div>
     </header>
-    <section id='welcome'>
+      <section id='welcome'>
         <nav class='menu-1'>
-        <ul class='menu-2'>
+         <ul class='menu-2'>
           <li class='country' id='btn-per'><a class='country-links'>Perú</a></li>
           <li class='country' id='btn-mex'><a class='country-links'>Mexico</a></li>
           <li class='country' id='btn-bra'><a class='country-links'>Brasil</a></li>
           <li class='country' id='btn-chi'><a class='country-links'>Chile</a></li>
-        </ul>
-      </nav>
-    </section>
+         </ul>
+        </nav>
+      </section>
   </div>
 </div>
     <div id='initial-page' class='initial'>
@@ -112,11 +113,23 @@
           </form>
         <p id='theme-id' class='theme-title'>Tema:</p>
       <label class='filter-by-year'> Por año: <input id='year' class='by-year' type='number' min='1960' max='2017' step='1' value='2006' ></label>
+      <label class='filter-by-year'> Por año: <input id='year1' class='by-year' type='number' min='1960' max='2017' step='1' value='2016' ></label>
+      <div><button id="showyear"> Aceptar </button></div>
+      <div>
+        <button id="orderBy"> Ordenar por </button>
+      <select id="orderBySelect">
+        <option value="valor">Valor</option>
+        <option value="anio">Año</option>
+      </select>
+      <select id="direction">
+          <option value="ASC">Ascendente</option>
+          <option value="DESC">Descendente</option>
+        </select>
+      </div>
     </section>
     <aside class="txt-indicator">
-      <span id='txt-id' value=''></span>
-      <span id='percentage-id' value=''></span>
-
+      <span id='txt-id'></span>
+      <span id='percentage-id'></span>
     </aside>
   </div>
   <div class='footer'>
@@ -126,5 +139,4 @@
       <script src='data.js'></script>
       <script src='main.js'></script>
   </body>
-    </head>
 </html>
