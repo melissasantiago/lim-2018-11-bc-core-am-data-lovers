@@ -56,8 +56,6 @@ const imprimirIndicadores = (arregloIndicadores, listaHTML) => {
   }
 };
 
-
-
 // -----------------------------------PERU---------------------------------//
 // OBTENER EL BOTON DE ARRIBA
 /* let botonPeru = document.getElementById('btn-per');
@@ -92,15 +90,12 @@ const goPeru = () => {
     imprimirIndicadores(arrayFiltrado, listaHTML);
   };
   const filtrarViolenciaPeru = () => {
-    // reducir el arreglo
     let arrayFiltrado = window.filtrarViolencia(arrayDeIndicadoresDePeru);
-
     let listaHTML = document.getElementById('list');
     limpiarListaIndicadores(listaHTML);
     imprimirIndicadores(arrayFiltrado, listaHTML);
   };
   const filtrarEducacionPeru = () => {
-    // reducir el arreglo
     let arrayFiltrado = window.filtrarEducacion(arrayDeIndicadoresDePeru);
     let listaHTML = document.getElementById('list');
     limpiarListaIndicadores(listaHTML);
@@ -205,8 +200,6 @@ const goChile = () => {
   limpiarListaIndicadores(listaHTML);
   imprimirIndicadores(arrayDeIndicadoresDeChile, listaHTML);
 }; */
-
-let selectedIndicator;
 
 let selectedIndicator;
 
