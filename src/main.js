@@ -130,7 +130,8 @@ const goMexico = () => {
   document.getElementById('indicators').style.display = 'block';
   document.getElementById('initial-page').style.display = 'none';
   document.getElementById('ind-text').innerHTML = 'Indicadores de México';
-  document.getElementById('indStatus').style.display = 'block';
+  document.getElementById('indStatus').style.display = 'none';
+
 
   let listaHTML = document.getElementById('list');
   limpiarListaIndicadores(listaHTML);
@@ -145,6 +146,7 @@ const goMexico = () => {
 
 
   const filtrarPoblacionMexico = () => {
+    // let arregloFiltrado = filtrarData(data, 'pais', 'MEX');
     let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(funcFiltroPob);
     let listaHTML = document.getElementById('list');
     limpiarListaIndicadores(listaHTML);
@@ -231,6 +233,8 @@ function showYears() {
       }
     }
     document.getElementById('txt-id').innerHTML = templateList;
+    document.getElementById('indicators').style.display = 'none';
+    document.getElementById('indStatus').style.display = 'block';
   }
 }
 const orderByValue = () => {

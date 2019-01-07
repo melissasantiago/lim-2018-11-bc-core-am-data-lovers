@@ -1,3 +1,31 @@
+const filtrarDataPais = (data, filterValue) => {
+  let newData = [];
+  for (let pais of data) {
+    if (pais[0] === filterValue) {
+newData = pais[1].indicators;
+    }
+  }
+  return newData;
+}
+
+const filtrarDataIndicador = (data, filterValue) => {
+let newData = [];
+
+
+  if (filterValue === 'poblacion') {
+    newData = filtrarPoblacion(data);
+  } else if (filterValue === 'violencia') {
+    // llamar a funcion violencia
+  } else if (filterValue === 'educacion') {
+    // llamar a funcion educacion
+  }
+// devuelvo arreglo de data filtrado por poblacion o educacion, ...
+// let newData = data.filter(funcFiltroPob);
+
+
+  return newData;
+}
+
 const funcFiltroPob = (elemento) => {
   // debe retornar un valor verdadero o falso (booleano)
   let codigoIndicador = elemento.indicatorCode;
@@ -69,6 +97,8 @@ const sortData = (data, sortBy, sortOrder) => {
   return [];
 };
 
+window.filtrarDataPais = filtrarDataPais;
+window.filtrarDataIndicador = filtrarDataIndicador;
 window.filtrarPoblacion = filtrarPoblacion;
 window.filtrarViolencia = filtrarViolencia;
 window.filtrarEducacion = filtrarEducacion;
@@ -84,6 +114,3 @@ window.funcFiltroPob = funcFiltroPob;
 };
 window.example = example;
 */
-
-
-// -------------------------------------------------------------------------//
