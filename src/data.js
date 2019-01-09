@@ -2,29 +2,27 @@ const filtrarDataPais = (data, filterValue) => {
   let newData = [];
   for (let pais of data) {
     if (pais[0] === filterValue) {
-newData = pais[1].indicators;
+      newData = pais[1].indicators;
     }
   }
   return newData;
-}
+};
 
 const filtrarDataIndicador = (data, filterValue) => {
-let newData = [];
-
+  let newData = [];
 
   if (filterValue === 'poblacion') {
     newData = filtrarPoblacion(data);
   } else if (filterValue === 'violencia') {
-    // llamar a funcion violencia
+    newData = filtrarViolencia(data); // llamar a funcion violencia
   } else if (filterValue === 'educacion') {
-    // llamar a funcion educacion
+    newData = filtrarEducacion(data); // llamar a funcion educacion
   }
-// devuelvo arreglo de data filtrado por poblacion o educacion, ...
-// let newData = data.filter(funcFiltroPob);
-
+  // devuelvo arreglo de data filtrado por poblacion o educacion, ...
+  // let newData = data.filter(funcFiltroPob);
 
   return newData;
-}
+};
 
 const funcFiltroPob = (elemento) => {
   // debe retornar un valor verdadero o falso (booleano)
@@ -45,6 +43,7 @@ const funcFiltroEduc = (elemento2) => {
 
 const filtrarPoblacion = (data) => {
   let arrayFiltrado = data.filter(funcFiltroPob);
+  // console.log(arrayFiltrado);
   return arrayFiltrado;
 };
 
@@ -58,8 +57,13 @@ const filtrarEducacion = (data) => {
   return arrayFiltrado;
 };
 
-// let dataordenada = window.sortData(arrayDeIndicadoresDePeru, 'anio', 'DESC')
+// let dataordenada
+/* const arrPratice = [1, 2, 3, 4];
+const numeros = arrPratice.map(arroz => arroz);
+console.log(numeros); */
 const sortData = (data, sortBy, sortOrder) => {
+  let dataTwo = data.map(arroz => arroz);
+  // console.log(dataTwo);
   if (sortBy === 'valor') {
     // En data eperamos un arreglo de objetos con la estructura {value: x , year: y}
     const comparaValor = (valor1, valor2) => {
@@ -74,7 +78,7 @@ const sortData = (data, sortBy, sortOrder) => {
       if (v1 === v2)
         return 0;
     };
-    data.sort(comparaValor);
+    dataTwo.sort(comparaValor);
   } else if (sortBy === 'anio') {
     const compareAnio = (valor1, valor2) => {
       // extraer los nombres ponemos variables para no poner en las condiciones indicatorName a cada rato
@@ -87,25 +91,28 @@ const sortData = (data, sortBy, sortOrder) => {
       if (v1 === v2)
         return 0;
     };
-    data.sort(compareAnio);
+    dataTwo.sort(compareAnio);
   }
 
   if (sortOrder === 'DESC') {
-    data = data.reverse();
+    dataTwo = dataTwo.reverse();
+  } else {
+    return dataTwo;
   }
-
-  return [];
+  // console.log(dataTwo);
+  return dataTwo;
 };
-
+/* window.worldbank = {
+  filtrarDataPais,
+  filtrarDataIndicador,
+  sortData,
+}; */
 window.filtrarDataPais = filtrarDataPais;
 window.filtrarDataIndicador = filtrarDataIndicador;
-window.filtrarPoblacion = filtrarPoblacion;
-window.filtrarViolencia = filtrarViolencia;
-window.filtrarEducacion = filtrarEducacion;
+// window.filtrarPoblacion = filtrarPoblacion;
+// window.filtrarViolencia = filtrarViolencia;
+// window.filtrarEducacion = filtrarEducacion;
 window.sortData = sortData;
-window.funcFiltroPob = funcFiltroPob;
-
-
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 

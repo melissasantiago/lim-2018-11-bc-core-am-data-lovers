@@ -9,16 +9,6 @@ const dataClone = (dataBank) => { // Clona toda la data para solo usar dataClone
 
 const data = dataClone(allTheData); // data es una array con 4 objetos (cada objeto es un pais)
 
-
-const getData = (arrayDePaises, index) => {
-  const data = arrayDePaises[index]; // un objeto con 2 propiedades que tiene la data de peru
-  return data['1'].indicators; // console.log(getDataPeru);
-};
-// const arrayDeIndicadoresDePeru = getData(data, 0); // console.log(arrayDeIndicadoresDePeru);//
-const arrayDeIndicadoresDeMexico = getData(data, 1);
-/* const arrayDeIndicadoresDeBrasil = getData(data, 2); */
-/* const arrayDeIndicadoresDeChile = getData(data, 3); */
-
 /* const comparaIndicadores = (indicat1, indicat2) => {
   // extraer los nombres ponemos variables para no poner en las condiciones indicatorName a cada rato
   let nombreInd1 = indicat1.indicatorName;
@@ -59,7 +49,6 @@ const imprimirIndicadores = (arregloIndicadores, listaHTML) => {
 // -----------------------------------PERU---------------------------------//
 // OBTENER EL BOTON DE ARRIBA
 /* let botonPeru = document.getElementById('btn-per');
-
 // QUE DEBE HACER CUANDO SE HAGA GOPERU
 const goPeru = () => {
   // OCULTA CIERTOS ELEMENTOS QUE NO DEBERIAN SER VISIBLES
@@ -82,19 +71,7 @@ const goPeru = () => {
   /* let botonFiltroProteccion = document.getElementById('filter-prot');
   let botonFiltroFinanzas = document.getElementById('filter-fin');*/
 /* // FUNCION DE FILTRADO
-  const filtrarPoblacionPeru = () => {
-    // reducir el arreglo
-    let arrayFiltrado = window.filtrarPoblacion(arrayDeIndicadoresDePeru);
-    let listaHTML = document.getElementById('list');
-    limpiarListaIndicadores(listaHTML);
-    imprimirIndicadores(arrayFiltrado, listaHTML);
-  };
-  const filtrarViolenciaPeru = () => {
-    let arrayFiltrado = window.filtrarViolencia(arrayDeIndicadoresDePeru);
-    let listaHTML = document.getElementById('list');
-    limpiarListaIndicadores(listaHTML);
-    imprimirIndicadores(arrayFiltrado, listaHTML);
-  };
+
   const filtrarEducacionPeru = () => {
     let arrayFiltrado = window.filtrarEducacion(arrayDeIndicadoresDePeru);
     let listaHTML = document.getElementById('list');
@@ -135,7 +112,9 @@ const goMexico = () => {
 
   let listaHTML = document.getElementById('list');
   limpiarListaIndicadores(listaHTML);
-  imprimirIndicadores(arrayDeIndicadoresDeMexico, listaHTML);
+  const dataDeMexico = window.filtrarDataPais(data, 'MEX');
+  // console.log(dataDeMexico);
+  imprimirIndicadores(dataDeMexico, listaHTML);
 
 
   let botonFiltroPoblacion = document.getElementById('filter-pob');
@@ -145,30 +124,23 @@ const goMexico = () => {
   // let botonFiltroFinanzas = document.getElementById('filter-fin');
 
 
-  const filtrarPoblacionMexico = () => {
-    // let arregloFiltrado = filtrarData(data, 'pais', 'MEX');
-    let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(funcFiltroPob);
+  const filtrarTemas = (nameDelTema) => {
+    // llamar a dataPais = filtraDataPais(data, pais)
+    let arrNewList1 = window.filtrarDataIndicador(dataDeMexico, nameDelTema);
+    // let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(funcFiltroPob);
     let listaHTML = document.getElementById('list');
     limpiarListaIndicadores(listaHTML);
-    imprimirIndicadores(arrayFiltrado, listaHTML);
+    imprimirIndicadores(arrNewList1, listaHTML);
   };
-  botonFiltroPoblacion.addEventListener('click', filtrarPoblacionMexico);
-
-  const filtrarViolenciaMexico = () => {
-    let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(funcFiltroVio);
-    let listaHTML = document.getElementById('list');
-    limpiarListaIndicadores(listaHTML);
-    imprimirIndicadores(arrayFiltrado, listaHTML);
-  };
-  botonFiltroViolencia.addEventListener('click', filtrarViolenciaMexico);
-
-  const filtrarEducacionMexico = () => {
-    let arrayFiltrado = arrayDeIndicadoresDeMexico.filter(funcFiltroEduc);
-    let listaHTML = document.getElementById('list');
-    limpiarListaIndicadores(listaHTML);
-    imprimirIndicadores(arrayFiltrado, listaHTML);
-  };
-  botonFiltroEducacion.addEventListener('click', filtrarEducacionMexico);
+  botonFiltroPoblacion.addEventListener('click', () => {
+    filtrarTemas('poblacion');
+  });
+  botonFiltroViolencia.addEventListener('click', () => {
+    filtrarTemas('violencia');
+  });
+  botonFiltroEducacion.addEventListener('click', () => {
+    filtrarTemas('educacion');
+  });
 };
 
 botonMexico.addEventListener('click', goMexico);
@@ -217,7 +189,7 @@ function showYears() {
   let templateList = '';
 
   // console.log(selectedIndicator);
-  for (let elemento of allTheData[1][1].indicators) {
+  for (let elemento of data[1][1].indicators) {
     if (elemento.indicatorCode === selectedIndicator) {
       // debugger
       /* const printIndicator = allTheData.forEach((i) => {
@@ -239,7 +211,7 @@ function showYears() {
 }
 const orderByValue = () => {
   let templateList = '';
-  for (let elemento of allTheData[1][1].indicators) {
+  for (let elemento of data[1][1].indicators) {
     if (elemento.indicatorCode === selectedIndicator) {
       let year = document.getElementById('year').value; // este es let xq cambia como inicial
       const year1 = document.getElementById('year1').value; // este es const xq el ultimo no cambiara
@@ -251,7 +223,7 @@ const orderByValue = () => {
       const orderBy = document.getElementById('orderBySelect').value;
       const direction = document.getElementById('direction').value;
 
-      window.sortData(auxArr, orderBy, direction);
+      window.sortData(auxArr, orderBy, direction);  
 
       auxArr.forEach((elem) => {
         templateList += `<div><b>${elem.year}:  </b>${elem.value}</div>`;

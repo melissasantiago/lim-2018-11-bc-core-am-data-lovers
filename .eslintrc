@@ -36,7 +36,9 @@
  },
   "extends": "eslint:recommended",
   "globals": {
-    "wwbank": false,
-    "WORLDBANK":false
+    "WORLDBANK": false,
+    "worldbank": false,
+    "filtrarDataIndicador": false,
+    "sortData": false,
   }
 }
