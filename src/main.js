@@ -113,6 +113,7 @@ function showYears() {
   let templateList = '';
 
   // console.log(selectedIndicator);
+
   for (let elemento of data[1][1].indicators) {
     if (elemento.indicatorCode === selectedIndicator) {
       // debugger
@@ -120,6 +121,7 @@ function showYears() {
         const li = `<label>${i.id}</label>`;
         templateList += li;
       });*/
+
       let year = document.getElementById('year').value;
       const year1 = document.getElementById('year1').value;
       templateList = '';
@@ -132,6 +134,7 @@ function showYears() {
     document.getElementById('indicators').style.display = 'none';
     document.getElementById('indStatus').style.display = 'block';
   }
+
 }
 const orderByValue = () => {
   let templateList = '';
@@ -149,6 +152,7 @@ const orderByValue = () => {
 
       // console.log(sortData(auxArr, orderBy, direction));
       let dadada = window.sortData(auxArr, orderBy, direction);
+      console.log(average(dadada));
 
       dadada.forEach((elem) => {
         templateList += `<div><b>${elem.year}:  </b>${elem.value}</div>`;
@@ -163,7 +167,13 @@ window.orderByValue = orderByValue;
 
 document.getElementById('orderBy').addEventListener('click', orderByValue);
 
-// botonChile.addEventListener('click', goChile);
+// Apartir de aquí mostramos el promedio dependiendo de los años
+const showAverage = (evtClick) => {
+
+  showIndAverage();
+};
+document.getElementById('showyear').addEventListener('click', showIndAverage);
+
 // ----------------------------------------------------------------------------- //
 function imprimirIndicador(id, indicador, listaHTML) {
   let nombreIndicador = indicador;// obtengo el nombre del indicador

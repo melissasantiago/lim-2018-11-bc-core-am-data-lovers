@@ -103,6 +103,26 @@ const sortData = (data, sortBy, sortOrder) => {
   return dataTwo;
   // return "a";
 };
+
+const average = (comp) => {
+  //debugger;
+  // suma los valoresa del array
+  const reducer = (total, currentValue) => total + currentValue['value'];
+  const sum = comp.reduce(reducer,0);
+  // toma length de array
+  // divide el array sum por length
+  const averageTotal = sum / comp.length;
+  //console.log(averageTotal);
+  return averageTotal;
+};
+//average([1, 0.02, 3, 15.5, 4, 5, 13.4, 5]);
+const dscAnio = [
+  {'value': 50.1820696801375, 'year': '1960' },
+  {'value': 50.2311246589852, 'year': '2010'},
+  {'value': 101.36109161377, 'year': '2016'}
+]
+average(dscAnio)
+
 /* window.worldbank = {
   filtrarDataPais,
   filtrarDataIndicador,
