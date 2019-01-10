@@ -62,7 +62,7 @@ const filtrarEducacion = (data) => {
 const numeros = arrPratice.map(arroz => arroz);
 console.log(numeros); */
 const sortData = (data, sortBy, sortOrder) => {
-  let dataTwo = data.map(arroz => arroz);
+  let dataTwo = data.map(arr => arr);
   // console.log(dataTwo);
   if (sortBy === 'valor') {
     // En data eperamos un arreglo de objetos con la estructura {value: x , year: y}
@@ -84,9 +84,9 @@ const sortData = (data, sortBy, sortOrder) => {
       // extraer los nombres ponemos variables para no poner en las condiciones indicatorName a cada rato
       let v1 = valor1.year;
       let v2 = valor2.year;
-      if (v1 < v2)
+      if (v1 < v2) {
         return -1;
-      if (v1 > v2)
+      } else if (v1 > v2)
         return +1;
       if (v1 === v2)
         return 0;
@@ -96,11 +96,12 @@ const sortData = (data, sortBy, sortOrder) => {
 
   if (sortOrder === 'DESC') {
     dataTwo = dataTwo.reverse();
-  } else {
-    return dataTwo;
+  } else if (sortOrder === 'ASC') {
+    dataTwo;
   }
   // console.log(dataTwo);
   return dataTwo;
+  // return "a";
 };
 /* window.worldbank = {
   filtrarDataPais,
