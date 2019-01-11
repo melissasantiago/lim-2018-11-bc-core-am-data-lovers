@@ -40,5 +40,8 @@
     "worldbank": false,
     "filtrarDataIndicador": false,
     "sortData": false,
+    "average": false,
+    "filtrarDataPais": false
   }
+
 }

@@ -75,8 +75,6 @@ const sortData = (data, sortBy, sortOrder) => {
         return -1;
       if (v1 > v2)
         return +1;
-      if (v1 === v2)
-        return 0;
     };
     dataTwo.sort(comparaValor);
   } else if (sortBy === 'anio') {
@@ -86,17 +84,16 @@ const sortData = (data, sortBy, sortOrder) => {
       let v2 = valor2.year;
       if (v1 < v2) {
         return -1;
-      } else if (v1 > v2)
+      } else {
         return +1;
-      if (v1 === v2)
-        return 0;
+      }
     };
     dataTwo.sort(compareAnio);
   }
 
   if (sortOrder === 'DESC') {
     dataTwo = dataTwo.reverse();
-  } else if (sortOrder === 'ASC') {
+  } else {
     dataTwo;
   }
   // console.log(dataTwo);

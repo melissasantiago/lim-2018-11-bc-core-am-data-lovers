@@ -151,7 +151,7 @@ const orderByValue = () => {
 
       // console.log(sortData(auxArr, orderBy, direction));
       let dadada = window.sortData(auxArr, orderBy, direction);
-      // console.log(average(dadada));
+      // sconsole.log(average(dadada));
       const getAverage = window.average(dadada);
 
       dadada.forEach((elem) => {
