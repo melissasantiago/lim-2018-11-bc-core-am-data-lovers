@@ -134,7 +134,6 @@ function showYears() {
     document.getElementById('indicators').style.display = 'none';
     document.getElementById('indStatus').style.display = 'block';
   }
-
 }
 const orderByValue = () => {
   let templateList = '';
@@ -152,14 +151,18 @@ const orderByValue = () => {
 
       // console.log(sortData(auxArr, orderBy, direction));
       let dadada = window.sortData(auxArr, orderBy, direction);
-      console.log(average(dadada));
+      // console.log(average(dadada));
+      const getAverage = window.average(dadada);
 
       dadada.forEach((elem) => {
         templateList += `<div><b>${elem.year}:  </b>${elem.value}</div>`;
       });
+      document.getElementById('percentage-id').innerHTML = getAverage;
+
       document.getElementById('txt-id').innerHTML = templateList;
       // console.log(elemento);
     }
+
     document.getElementById('txt-id').innerHTML = templateList;
   }
 };
@@ -167,12 +170,6 @@ window.orderByValue = orderByValue;
 
 document.getElementById('orderBy').addEventListener('click', orderByValue);
 
-// Apartir de aquí mostramos el promedio dependiendo de los años
-const showAverage = (evtClick) => {
-
-  showIndAverage();
-};
-document.getElementById('showyear').addEventListener('click', showIndAverage);
 
 // ----------------------------------------------------------------------------- //
 function imprimirIndicador(id, indicador, listaHTML) {
