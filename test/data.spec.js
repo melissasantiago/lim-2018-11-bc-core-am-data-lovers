@@ -11,7 +11,7 @@ require('../src/data.js');
   });
 });*/
 const dataBankTest = [{
-'PER': {
+  'PER': {
     'indicators': [
       {
         'data': {
@@ -26,7 +26,7 @@ const dataBankTest = [{
     'dataSource': 'Indicadores del desarrollo mundial',
     'lastUpdated': '2018-11-14'
   },
-'MEX': {
+  'MEX': {
     'indicators': [
       {
         'data': {

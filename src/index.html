@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximun-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@1.8.1/css/boxicons.min.css" rel="stylesheet">
     <link href="http://allfont.es/allfont.css?fonts=andes-bold" rel="stylesheet" type="text/css" />
  </head>
@@ -50,7 +51,7 @@
       <img class="worldmap" src="imagenes/worldmap.png" alt="logo de Data World Bank">
     </section>
     <aside class="text-1">
-      <label> Gracias al fuerte liderazgo nacional y las reformas ambiciosas, la mayoría de las partes del mundo han experimentado una expansión en el acceso a los servicios de salud y acciones para garantizar la asequibilidad. Sin embargo, a pesar de esto, la mitad de la población mundial todavía no puede acceder a los servicios de salud necesarios y 100 millones de personas son empujadas a la pobreza extrema cada año debido a los gastos de salud, según una investigación reciente del Grupo del Banco Mundial y la Organización Mundial de la Salud (OMS).</label>
+      <label class= "welcome-txt"> Gracias al fuerte liderazgo nacional y las reformas ambiciosas, la mayoría de las partes del mundo han experimentado una expansión en el acceso a los servicios de salud y acciones para garantizar la asequibilidad. Sin embargo, a pesar de esto, la mitad de la población mundial todavía no puede acceder a los servicios de salud necesarios y 100 millones de personas son empujadas a la pobreza extrema cada año debido a los gastos de salud, según una investigación reciente del Grupo del Banco Mundial y la Organización Mundial de la Salud (OMS).</label>
      </aside>
      <div class="root-pictures">
         <div class="root-item-1">
@@ -76,8 +77,10 @@
       <form class="indicator-tittle">
           <h3 id="ind-text" class="ind-title"> Indicadores</h3>
        </form>
-      <ul class="indicators-list" id="list">
-      </ul>
+       <div class="list-style">
+        <ul class="indicators-list" id="list">
+        </ul>
+      </div>
     </section>
     <aside class="ind-text-2">
       <section id="themes">
@@ -97,28 +100,34 @@
   <div id="indStatus" class="ind-status">
     <section class="inf-indicator">
       <form class="indicator-tittle">
-        <h1 id="id-text" class="id-title"> Indicador</h1>
+        <h1 id="id-text" class="id-title"> Mexico</h1>
           </form>
         <p id="theme-id" class="theme-title">Tema:</p>
-      <label class="filter-by-year"> Por año: <input id="year" class="by-year" type="number" min="1960" max="2017" step="1" value="2006" ></label>
-      <label class="filter-by-year"> Por año: <input id="year1" class="by-year" type="number" min="1960" max="2017" step="1" value="2016" ></label>
-      <div><button id="showyear"> Aceptar </button></div>
+        <span id="theme-ind" class="ind-title"></span>
+          <p><label class="percentage-txt">El promedio de los porcentajes en los años seleccionados para este indicador es <span id="percentage-id"></span> %</label></p>
+        <div class="third-page">
+          <section class="third-right">
+      <p><label class="filter-by-year"> Desde: <input id="year" class="by-year" type="number" min="1960" max="2017" step="1" value="2006" ></label></p>
+      </p><label class="filter-by-year"> Hasta: <input id="year1" class="by-year" type="number" min="1960" max="2017" step="1" value="2016" ></label></p>
+      <div><button id="showyear" class="inpt-show"> Aceptar </button></div>
       <div>
-        <button id="orderBy"> Ordenar por </button>
-      <select id="orderBySelect">
+      <p><select id="orderBySelect" class="select-box">
         <option value="valor">Valor</option>
         <option value="anio">Año</option>
-      </select>
-      <select id="direction">
+      </select></p>
+      <p><select id="direction" class="select-box">
           <option value="ASC">Ascendente</option>
           <option value="DESC">Descendente</option>
-        </select>
+        </select></p>
+        <p><button id="orderBy" class="inpt-order"> Ordenar </button></p>
       </div>
+      </section>
+      <aside class="txt-indicator">
+        <div class="list-ind">
+         <span id="txt-id" class="template-style"></span>
+          </div>
+      </aside>
     </section>
-    <aside class="txt-indicator">
-      <span id="txt-id"></span>
-      <label>El promedio de los porcentajes en los años seleccionados para este indicador es <span id="percentage-id"></span> %</label>
-    </aside>
   </div>
   <div class="footer">
 <footer class="pie-pagina"></footer>

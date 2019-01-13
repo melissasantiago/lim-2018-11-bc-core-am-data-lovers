@@ -71,10 +71,11 @@ const sortData = (data, sortBy, sortOrder) => {
       let v1 = valor1.value;
       let v2 = valor2.value;
       // condiciones para ordenar alfabeticamente ver MDN
-      if (v1 < v2)
+      if (v1 < v2) {
         return -1;
-      if (v1 > v2)
+      } else {
         return +1;
+      }
     };
     dataTwo.sort(comparaValor);
   } else if (sortBy === 'anio') {
