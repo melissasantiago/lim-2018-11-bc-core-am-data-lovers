@@ -122,11 +122,11 @@ const orderByValue = () => {
       const direction = document.getElementById('direction').value;
 
       // console.log(sortData(auxArr, orderBy, direction));
-      let dadada = window.sortData(auxArr, orderBy, direction);
-      // sconsole.log(average(dadada));
-      const getAverage = window.average(dadada);
+      let sortedFinalData = window.sortData(auxArr, orderBy, direction);
+      // sconsole.log(average(sortedFinalData));
+      const getAverage = window.average(sortedFinalData);
 
-      dadada.forEach((elem) => {
+      sortedFinalData.forEach((elem) => {
         templateList += `<div><b>${elem.year}:  </b>${elem.value}</div>`;
       });
       document.getElementById('percentage-id').innerHTML = getAverage;

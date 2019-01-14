@@ -21,7 +21,7 @@
 
 * ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
 
-  Los usuarios de WORLDBANK DATA desean saber que cuales son los indicadores a los que pueden acceder así como cuales serían los países latinoamericanos que brinda esta data. Desean ,además, que haya un listado de los indicadores y que facilmente puedan visualizar la información de cada uno de ellos.
+  Los usuarios de WORLDBANK DATA consideran relevante saber cuales son los indicadores a los que pueden acceder, para así prevenir iniciar una navegación profunda en un sitio que no brinde los resultados que realmente buscan. También demostraron su interes en comparar indicadores en relación a otros años y paises. Además, afirmaron que la data actualizada influencia en su afinidad hacia los bancos de información a los que recurren con más frecuencia.
 
 
 ### Historias de usuario
