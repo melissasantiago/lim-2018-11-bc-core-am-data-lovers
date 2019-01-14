@@ -28,8 +28,6 @@ const imprimirIndicadores = (arregloIndicadores, listaHTML) => {
   }
 };
 
-// -----------------------------------PERU---------------------------------//
-
 // -----------------------------------MEXICO---------------------------------//
 let botonMexico = document.getElementById('btn-mex');
 const goMexico = () => {
@@ -50,7 +48,7 @@ const goMexico = () => {
   let botonFiltroPoblacion = document.getElementById('filter-pob');
   let botonFiltroViolencia = document.getElementById('filter-vio');
   let botonFiltroEducacion = document.getElementById('filter-edu');
-  
+
 
   const filtrarTemas = (nameDelTema) => {
     // llamar a dataPais = filtraDataPais(data, pais)
@@ -96,12 +94,6 @@ function showYears() {
 
   for (let elemento of data[1][1].indicators) {
     if (elemento.indicatorCode === selectedIndicator) {
-      // debugger
-      /* const printIndicator = allTheData.forEach((i) => {
-        const li = `<label>${i.id}</label>`;
-        templateList += li;
-      });*/
-
       let year = document.getElementById('year').value;
       const year1 = document.getElementById('year1').value;
       templateList = '';
