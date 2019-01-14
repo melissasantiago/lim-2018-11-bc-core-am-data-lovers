@@ -9,24 +9,6 @@ const dataClone = (dataBank) => { // Clona toda la data para solo usar dataClone
 
 const data = dataClone(allTheData); // data es una array con 4 objetos (cada objeto es un pais)
 
-/* const comparaIndicadores = (indicat1, indicat2) => {
-  // extraer los nombres ponemos variables para no poner en las condiciones indicatorName a cada rato
-  let nombreInd1 = indicat1.indicatorName;
-  let nombreInd2 = indicat2.indicatorName;
-  // condiciones para ordenar alfabeticamente ver MDN
-  if (nombreInd1 < nombreInd2)
-    return -1;
-  if (nombreInd1 > nombreInd2)
-    return +1;
-  if (nombreInd1 === nombreInd2)
-    return 0;
-};
-
-arrayDeIndicadoresDePeru.sort(comparaIndicadores);
-arrayDeIndicadoresDeMexico.sort(comparaIndicadores);//
-arrayDeIndicadoresDeBrasil.sort(comparaIndicadores);
-arrayDeIndicadoresDeChile.sort(comparaIndicadores);// */
-
 const inicioPantalla = () => {
   document.getElementById('initial-page').style.display = 'block';
   document.getElementById('indicators').style.display = 'none';
@@ -68,9 +50,7 @@ const goMexico = () => {
   let botonFiltroPoblacion = document.getElementById('filter-pob');
   let botonFiltroViolencia = document.getElementById('filter-vio');
   let botonFiltroEducacion = document.getElementById('filter-edu');
-  // let botonFiltroProteccion = document.getElementById('filter-prot');
-  // let botonFiltroFinanzas = document.getElementById('filter-fin');
-
+  
 
   const filtrarTemas = (nameDelTema) => {
     // llamar a dataPais = filtraDataPais(data, pais)

@@ -7,8 +7,6 @@ body {
   height: 100%;
   font-family: 'Andes Bold', arial;
 }
-
-
 #logotype {
     padding-top: 10px;
     padding-left: 20px;
@@ -16,13 +14,11 @@ body {
     width: 250px;
     margin: 10 50px;
   }
-
 .container {
   margin-left: 3%;
     padding-bottom: 4%;
     padding-top: 4%;
 }
-
 .field-input {
     width:50%;
     height: 20%;
@@ -30,14 +26,17 @@ body {
     margin-bottom: 150px;
     margin-right: 20px;
   }
-
 .search-input {
   margin-left: 30px;
   width: 50%;
-  height: 27px;
+  height: 32px;
   box-sizing: border-box;
   border-radius: 4px;
 }
+.data-filter {
+    margin-left: 56%;
+    margin-top: 1em;
+  }
 #welcome {
   display : block;
 }
@@ -71,7 +70,7 @@ body {
 .country-links:hover{
   background: #002244;
 }
-#indicators {
+.ind-space {
   /*padding: 1em 2em;*/
   width: 100%;
   height: 100%;
@@ -94,7 +93,7 @@ padding: 10px 15px;
   list-style: none;
   padding: 0;
   margin right: 10px;
-  background: #fff;
+  background: #f5f4f4;
   line-height: 40px;
   text-align: left;
 }
@@ -112,7 +111,6 @@ padding-left: 30px;
 .themes-links:hover {
   color: #009FDA
 }
-
  .text-0, .text-1, .ind-text-1,.ind-text-2, .pie-pagina {
   /*font-family: ;*/
  padding: 3em 1em;
@@ -129,16 +127,13 @@ padding-left: 30px;
   float: left;
   box-sizing: border-box;
 }
-
 .text-0 {
   width: 60%;
  font-family: 'Andes Bold', arial;
  font-size: 22px;
  text-shadow: 1px 1px 1px #aaa;
 }
-
 .text-1 {
-
   padding-top: 15em;
   width: 40%;
   height: 250px;
@@ -182,29 +177,24 @@ padding-left: 30px;
   list-style: none;
   display: inline-block;
 }
-
 .ind-text-1 {
   width: 60%;
   font-family: 'Andes Bold', arial;
   }
-
 .txt-indicator {
     width: 80%;
     font-family: 'Andes Bold', arial;
     }
-
 .ind-text-2 {
   padding-top: 10em;
   width: 30%;
   height: 250px;
 }
-
 .third-right {
   margin-left: 10em;
   width: 20%;
   height: 250px;
 }
-
 .worldmap {
   margin-top: -6px;
   margin-left: 15px;
@@ -215,14 +205,12 @@ padding-left: 30px;
   min-height: 100vh;
   margin: 0;
 }
-
 .root-item, .root-item-1 {
   width: 600px;
   position: relative;
   margin: auto;
   margin-bottom: 20px;
 }
-
 .root-item:before {
   content: '';
   width: 600px;
@@ -232,7 +220,6 @@ padding-left: 30px;
   right: 0;
   background: linear-gradient(rgba(255, 255, 255, 0), black);
 }
-
 .root-item-1:before {
   content: '';
   width: 600px;
@@ -242,13 +229,11 @@ padding-left: 30px;
   right: 0;
   background: linear-gradient(rgba(255, 255, 255, 0), black);
 }
-
 .country-pic{
   width: 600px;
   height: 171px;
   display: block;
 }
-
 .root-txt {
   position: absolute;
   bottom: 20px;
@@ -257,15 +242,14 @@ padding-left: 30px;
   font-family: arial;
   font-size: 2em;
 }
-
 /*.ind-space {
   width: 100%;
   height: 3000px;
   background-color: #f5f4f4;
   padding-bottom: 8em;
-
 }*/
 .indicators-list {
+  margin-right: 2em;
   padding-top: 1em;
   margin-left: 3em;
   padding-bottom: 2em;
@@ -307,7 +291,6 @@ padding-left: 30px;
   background-color: #ffffff;
   border: 1px;
   box-shadow: inset 1px 1px 4px 0 rgba(0, 0, 0, 0.25), 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-
 }
 .inpt-show, .inpt-order {
   width: 133px;
@@ -316,7 +299,6 @@ padding-left: 30px;
   background-color: #009fda;
   color: white;
   border: 1px solid #009fda;
-
 }
 .select-box{
   height: 25px;
@@ -325,7 +307,6 @@ padding-left: 30px;
   border: 1px;
   box-shadow: inset 1px 1px 4px 0 rgba(0, 0, 0, 0.25), 0 2px 4px 0 rgba(0, 0, 0, 0.25);
 }
-
 .list-ind{
   padding-left: 15%;
       padding-right: 15%;
@@ -338,6 +319,10 @@ padding-left: 30px;
       padding-top: 1%;
       padding-bottom: 1%;
 }
+.theme-title{
+    padding-top: 3em;
+    padding-bottom: 10%;
+}
 .template-style {
   width: 310px;
   height: 248px;
@@ -347,28 +332,32 @@ padding-left: 30px;
   color: #333333;
 }
 .percentage-txt {
+  margin-left: 13em;
+  text-align: center;
   width: 623px;
   height: 40px;
   font-family: Arial;
-  font-size: 20px;
+  font-size: 15px;
   font-style: italic;
   line-height: 0.94;
   color: #000000;
 }
 .percentage-id {
   font-weight: bold;
+  text-align: center;
 }
-
 .pie-pagina{
   width: 100%;
   background-color: #000;
-  height: 60%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 /* Pantalla de Ipad 1024px */
 @media screen and (max-width: 1024px){
   .menu-1 {
     /*outline: 1px solid yellow;*/
-    width: 150%;
+    width: 195%;
     height: auto;
   }
   .welcome-txt {
@@ -376,5 +365,108 @@ padding-left: 30px;
     height: 197px;
   }
   .initial{
-   width: 140%;
+   margin-left: 6em;
+   width: 160%;
   }
+  .pie-pagina{
+  width: 190%;
+  }
+  .ind-space {
+  width: 195%;
+  padding-bottom: 290%;
+}
+.ind-status {
+  width: 190%;
+  }
+  .container {
+    width: 180%;
+  }
+  #logotype {
+  padding-top: 19px;
+  padding-left: 20px;
+  padding-right: 15px;
+  width: 380px;
+  }
+  .list-style {
+    width: 1090px;
+  }
+  .percentage-txt {
+    margin-left: 25%
+  }
+  /* Pantalla de iphone 6/7/8 de 375px */
+@media screen and (max-width: 400px){
+  #logotype {
+    margin-left: 7em;
+    padding-top: 19px;
+    padding-left: 20px;
+    padding-right: 15px;
+    width: 380px;
+  }
+  .search-input {
+    margin-left: 85px;
+    width: 76%;
+    margin-top: 2em;
+  }
+  .data-filter {
+    margin-left: 21%;
+  }
+  .initial {
+    margin-left: 4em;
+    background-image: url("imagenes/worldmap.png");
+    height: 500px; /* Specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+  }
+  .menu-1{
+        width: 200%;
+  }
+.text-0 {
+ text-align: center;
+ width: 90%;
+ margin-left: 1em;
+}
+.worldmap {
+ display: none;
+}
+.text-1 {
+ padding-top: 0em;
+ text-align: center;
+ width: 90%;
+ margin-left: 2em;
+ margin-bottom: 4em;
+}
+.pie-pagina {
+  margin-top: 220%;
+  width: 190%;
+  }
+.root-pictures {
+  margin-left: 1em;
+  }
+.root-item-1:before {
+  top: 523px;
+}
+.list-style {
+    width: 165%;
+}
+.ind-space{
+      width: 198%;
+}
+.ind-text-2 {
+  width: 50%;
+  }
+.percentage-txt {
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #333333;
+}
+.third-right {
+  margin-left: 4em;
+  }
+.list-ind {
+  padding-left: 19%;
+  width: 35%;
+    }
