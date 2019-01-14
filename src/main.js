@@ -144,7 +144,8 @@ document.getElementById('orderBy').addEventListener('click', orderByValue);
 
 
 // ----------------------------------------------------------------------------- //
-function imprimirIndicador(id, indicador, listaHTML) {
+const imprimirIndicador = (id, indicador, listaHTML) => {
+// function imprimirIndicador(id, indicador, listaHTML) {
   let nombreIndicador = indicador;// obtengo el nombre del indicador
   let nodoIndicador = document.createTextNode(nombreIndicador);// creo el texto HTML con el nombre del indicador
   let nodoEntradaLista = document.createElement('li');// creo la entrada de lista sin texto
@@ -152,4 +153,4 @@ function imprimirIndicador(id, indicador, listaHTML) {
   nodoEntradaLista.appendChild(nodoIndicador);// inserto el texto(nombre del indicador) en la entrada de la lista
   nodoEntradaLista.addEventListener('click', abrirIndicador); // al hacer click en el indicador
   listaHTML.appendChild(nodoEntradaLista);// inserto la entrada de la lista ahora con el texto en el documento HTML
-}
+};
