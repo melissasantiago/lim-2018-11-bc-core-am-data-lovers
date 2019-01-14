@@ -1,15 +1,14 @@
 # WORLDBANK DATA
 
 ### Definición del producto
-   WORLDBANK DATA es una web diseñada con data brindada por el Banco Mundial para usuarios que esten en constante investigacíón. De acuerdo a las encuestas hechas a los posibles usuarios esta data proporciona data desde 1960 a 2017 con lo cual le permite a los usuarios tener data especifica según sus necesidades.
-   También observamos que al diseñar era importante agregar una tercera pantalla donde el usuario pueda iteractuar con la información pudiendo obtener un promedio según los años que ellxs  necesiten.
+   WORLDBANK DATA es una web diseñada con data brindada por el Banco Mundial para usuarios que consideren como una tarea profesional importante la investigación sustentada.La web proporciona data organizada desde 1960 a 2017 con lo cual le permite a los usuarios tener data especifica según sus intereses en la búsqueda.La interfaz ha sido creada para que el usuario tenga un flujo de navegación intuitivo. Parte de la experiencia única que se ofrece en este banco de datos permite al usuario personalizar la información que desea obtener.  
 
 #### Prototipo de alta fidelidad
 
    ![altafidelidad](https://i.ibb.co/jvHGwmD/Whats-App-Image-2019-01-13-at-3-42-56-PM.jpg)
 
    Puedes ver el diagrama de flujo en este [link](https://i.ibb.co/tpQsyWR/flujo.jpg)y la interfaz construida de Zeplin [aquí](https://zpl.io/2jv0JEm)
-   
+
 ## Descripción del producto
 
 * ¿Quiénes son los principales usuarios de producto?
@@ -31,16 +30,16 @@
 ### Diseño de la Interfaz de Usuario
 
 #### Prototipo de baja fidelidad
-* Primer prototipo cuenta con 2 pantallas
+* Primer prototipo
 ![prototipodebajfidelidad](https://i.ibb.co/qx4szGy/1-prototype.jpg)
 
-* Segundo prototipo: Aquí iteramos con los posibles usuarios y agregamos la tercera pantalla.
+* Segundo prototipo
 ![prototipodebajfidelidad](https://i.ibb.co/1KvP2r4/2-prototipo-de-baja-fidelidad.jpg)
 
-* Tercer prototipo: En esta nueva iteración consideramos que era necesario agregar una tercera pantalla de acuerdo a las necesidades de nuestros usuarios.
+* Tercer prototipo
 ![prototipodebajfidelidad](https://i.ibb.co/Cnq8Nkp/despues-de-iterar-baja-fidelidad-este-el-2.jpg)
 
-* Finalmente, al iterar llegamos a este prototipo.
+* Cuarto prototipo
 ![pro](https://i.ibb.co/n3NzwMQ/despues-de-iterar-el-prototipo-2-agregamos-la-3-pagina.jpg)
 
 ### Testeo de Usabilidad
